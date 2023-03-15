@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="14b52967e6294eb1b53045f94002c988" Name="Diagram1">
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.DanhMuc" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.DanhMuc_SP" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.HoaDon" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.MAUSAC" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.SANPHAM" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.SanPham_Mua" Width="1.5" PointX="9.125" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.SIZE" Width="1.5" PointX="11.125" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.sysdiagram" Width="1.5" PointX="7.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.TaiKhoan" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_DanhMuc_SP_DanhMuc" ManuallyRouted="false" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_SANPHAM_DanhMuc_SP" ManuallyRouted="false" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_HoaDon_DanhMuc" ManuallyRouted="false" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_SANPHAM" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.NhaCC" Width="1.5" PointX="10.125" PointY="0.625" />
+        <EntityTypeShape EntityType="Ban_Quan_ao_demo3Model.Chi_tiet_SP" Width="1.5" PointX="13.375" PointY="3.25" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_Size_Color_MAUSAC1" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_Size_Color_NhaCC1" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_Size_Color_SANPHAM1" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_Size_Color_SIZE1" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_MAUSAC" />
+        <AssociationConnector Association="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_SIZE" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

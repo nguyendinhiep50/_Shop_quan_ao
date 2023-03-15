@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Ban_Quan_ao_demo3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DanhMuc">
+    <Key>
+      <PropertyRef Name="MaDanhMuc" />
+    </Key>
+    <Property Name="MaDanhMuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDanhMuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DanhMuc_SP" Relationship="Self.FK_DanhMuc_SP_DanhMuc" FromRole="DanhMuc" ToRole="DanhMuc_SP" />
+  </EntityType>
+  <EntityType Name="DanhMuc_SP">
+    <Key>
+      <PropertyRef Name="MaDMSP" />
+    </Key>
+    <Property Name="MaDMSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDanhMuc" Type="Int32" />
+    <Property Name="TenMuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DanhMuc" Relationship="Self.FK_DanhMuc_SP_DanhMuc" FromRole="DanhMuc_SP" ToRole="DanhMuc" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK_SANPHAM_DanhMuc_SP" FromRole="DanhMuc_SP" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+    </Key>
+    <Property Name="MaHoaDon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TongTien" Type="Int32" />
+    <Property Name="MaTK" Type="Int32" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDat" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_HoaDon_DanhMuc" FromRole="HoaDon" ToRole="TaiKhoan" />
+    <NavigationProperty Name="SanPham_Mua" Relationship="Self.FK_SanPham_Mua_HoaDon" FromRole="HoaDon" ToRole="SanPham_Mua" />
+    <Property Name="XacNhan" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MAUSAC">
+    <Key>
+      <PropertyRef Name="MaMau" />
+    </Key>
+    <Property Name="MaMau" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenMau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Chi_tiet_SP" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_MAUSAC1" FromRole="MAUSAC" ToRole="Chi_tiet_SP" />
+    <NavigationProperty Name="SanPham_Mua" Relationship="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_MAUSAC" FromRole="MAUSAC" ToRole="SanPham_Mua" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MaSP_ID" />
+    </Key>
+    <Property Name="MaSP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDMSP" Type="Int32" />
+    <Property Name="TenSP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Int32" />
+    <Property Name="TinhTrang" Type="Boolean" />
+    <Property Name="URL_Hinh_Anh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NhanXet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DanhGia" Type="Int32" />
+    <Property Name="LuotMua" Type="Int32" />
+    <NavigationProperty Name="DanhMuc_SP" Relationship="Self.FK_SANPHAM_DanhMuc_SP" FromRole="SANPHAM" ToRole="DanhMuc_SP" />
+    <NavigationProperty Name="SanPham_Mua" Relationship="Self.FK_SanPham_Mua_SANPHAM" FromRole="SANPHAM" ToRole="SanPham_Mua" />
+    <NavigationProperty Name="Chi_tiet_SP" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_SANPHAM1" FromRole="SANPHAM" ToRole="Chi_tiet_SP" />
+  </EntityType>
+  <EntityType Name="SanPham_Mua">
+    <Key>
+      <PropertyRef Name="MaSP_Mua" />
+    </Key>
+    <Property Name="MaSP_Mua" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaSP_ID" Type="Int32" />
+    <Property Name="MaHoaDon" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK_SanPham_Mua_HoaDon" FromRole="SanPham_Mua" ToRole="HoaDon" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_SanPham_Mua_SANPHAM" FromRole="SanPham_Mua" ToRole="SANPHAM" />
+    <Property Name="masize" Type="Int32" />
+    <Property Name="mamau" Type="Int32" />
+    <NavigationProperty Name="MAUSAC" Relationship="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_MAUSAC" FromRole="SanPham_Mua" ToRole="MAUSAC" />
+    <NavigationProperty Name="SIZE" Relationship="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_SIZE" FromRole="SanPham_Mua" ToRole="SIZE" />
+  </EntityType>
+  <EntityType Name="SIZE">
+    <Key>
+      <PropertyRef Name="MaSize" />
+    </Key>
+    <Property Name="MaSize" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Size1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Chi_tiet_SP" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_SIZE1" FromRole="SIZE" ToRole="Chi_tiet_SP" />
+    <NavigationProperty Name="SanPham_Mua" Relationship="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_SIZE" FromRole="SIZE" ToRole="SanPham_Mua" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaTK" />
+    </Key>
+    <Property Name="MaTK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhauTk" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhanCap" Type="Boolean" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TenNguoiDung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_DanhMuc" FromRole="TaiKhoan" ToRole="HoaDon" />
+  </EntityType>
+  <Association Name="FK_DanhMuc_SP_DanhMuc">
+    <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
+    <End Role="DanhMuc_SP" Type="Self.DanhMuc_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="MaDanhMuc" />
+      </Principal>
+      <Dependent Role="DanhMuc_SP">
+        <PropertyRef Name="MaDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_DanhMuc_SP">
+    <End Role="DanhMuc_SP" Type="Self.DanhMuc_SP" Multiplicity="0..1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc_SP">
+        <PropertyRef Name="MaDMSP" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MaDMSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_DanhMuc">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTK" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaTK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_Mua_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+    <End Role="SanPham_Mua" Type="Self.SanPham_Mua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHoaDon" />
+      </Principal>
+      <Dependent Role="SanPham_Mua">
+        <PropertyRef Name="MaHoaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_Mua_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+    <End Role="SanPham_Mua" Type="Self.SanPham_Mua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP_ID" />
+      </Principal>
+      <Dependent Role="SanPham_Mua">
+        <PropertyRef Name="MaSP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Shop_quan_ao" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DanhMucs" EntityType="Self.DanhMuc" />
+    <EntitySet Name="DanhMuc_SP" EntityType="Self.DanhMuc_SP" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="MAUSACs" EntityType="Self.MAUSAC" />
+    <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+    <EntitySet Name="SanPham_Mua" EntityType="Self.SanPham_Mua" />
+    <EntitySet Name="SIZEs" EntityType="Self.SIZE" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+    <AssociationSet Name="FK_DanhMuc_SP_DanhMuc" Association="Self.FK_DanhMuc_SP_DanhMuc">
+      <End Role="DanhMuc" EntitySet="DanhMucs" />
+      <End Role="DanhMuc_SP" EntitySet="DanhMuc_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_DanhMuc_SP" Association="Self.FK_SANPHAM_DanhMuc_SP">
+      <End Role="DanhMuc_SP" EntitySet="DanhMuc_SP" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_DanhMuc" Association="Self.FK_HoaDon_DanhMuc">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_Mua_HoaDon" Association="Self.FK_SanPham_Mua_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="SanPham_Mua" EntitySet="SanPham_Mua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_Mua_SANPHAM" Association="Self.FK_SanPham_Mua_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="SanPham_Mua" EntitySet="SanPham_Mua" />
+    </AssociationSet>
+    <EntitySet Name="NhaCCs" EntityType="Ban_Quan_ao_demo3Model.NhaCC" />
+    <EntitySet Name="Chi_tiet_SP" EntityType="Ban_Quan_ao_demo3Model.Chi_tiet_SP" />
+    <AssociationSet Name="FK_Size_Color_MAUSAC1" Association="Ban_Quan_ao_demo3Model.FK_Size_Color_MAUSAC1">
+      <End Role="MAUSAC" EntitySet="MAUSACs" />
+      <End Role="Chi_tiet_SP" EntitySet="Chi_tiet_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Size_Color_NhaCC1" Association="Ban_Quan_ao_demo3Model.FK_Size_Color_NhaCC1">
+      <End Role="NhaCC" EntitySet="NhaCCs" />
+      <End Role="Chi_tiet_SP" EntitySet="Chi_tiet_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Size_Color_SANPHAM1" Association="Ban_Quan_ao_demo3Model.FK_Size_Color_SANPHAM1">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="Chi_tiet_SP" EntitySet="Chi_tiet_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Size_Color_SIZE1" Association="Ban_Quan_ao_demo3Model.FK_Size_Color_SIZE1">
+      <End Role="SIZE" EntitySet="SIZEs" />
+      <End Role="Chi_tiet_SP" EntitySet="Chi_tiet_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_Mua_MAUSAC" Association="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_MAUSAC">
+      <End Role="MAUSAC" EntitySet="MAUSACs" />
+      <End Role="SanPham_Mua" EntitySet="SanPham_Mua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_Mua_SIZE" Association="Ban_Quan_ao_demo3Model.FK_SanPham_Mua_SIZE">
+      <End Role="SIZE" EntitySet="SIZEs" />
+      <End Role="SanPham_Mua" EntitySet="SanPham_Mua" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="NhaCC">
+    <Key>
+      <PropertyRef Name="MaNhaCC" />
+    </Key>
+    <Property Name="MaNhaCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNhaCC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Chi_tiet_SP" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_NhaCC1" FromRole="NhaCC" ToRole="Chi_tiet_SP" />
+  </EntityType>
+  <EntityType Name="Chi_tiet_SP">
+    <Key>
+      <PropertyRef Name="Ma_Size_Color" />
+    </Key>
+    <Property Name="Ma_Size_Color" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaMau" Type="Int32" />
+    <Property Name="MaSize" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="MaSP_ID" Type="Int32" />
+    <Property Name="MaNCC" Type="Int32" />
+    <NavigationProperty Name="MAUSAC" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_MAUSAC1" FromRole="Chi_tiet_SP" ToRole="MAUSAC" />
+    <NavigationProperty Name="NhaCC" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_NhaCC1" FromRole="Chi_tiet_SP" ToRole="NhaCC" />
+    <NavigationProperty Name="SANPHAM" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_SANPHAM1" FromRole="Chi_tiet_SP" ToRole="SANPHAM" />
+    <NavigationProperty Name="SIZE" Relationship="Ban_Quan_ao_demo3Model.FK_Size_Color_SIZE1" FromRole="Chi_tiet_SP" ToRole="SIZE" />
+  </EntityType>
+  <Association Name="FK_Size_Color_MAUSAC1">
+    <End Type="Ban_Quan_ao_demo3Model.MAUSAC" Role="MAUSAC" Multiplicity="0..1" />
+    <End Type="Ban_Quan_ao_demo3Model.Chi_tiet_SP" Role="Chi_tiet_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MAUSAC">
+        <PropertyRef Name="MaMau" />
+      </Principal>
+      <Dependent Role="Chi_tiet_SP">
+        <PropertyRef Name="MaMau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Size_Color_NhaCC1">
+    <End Type="Ban_Quan_ao_demo3Model.NhaCC" Role="NhaCC" Multiplicity="0..1" />
+    <End Type="Ban_Quan_ao_demo3Model.Chi_tiet_SP" Role="Chi_tiet_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCC">
+        <PropertyRef Name="MaNhaCC" />
+      </Principal>
+      <Dependent Role="Chi_tiet_SP">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Size_Color_SANPHAM1">
+    <End Type="Ban_Quan_ao_demo3Model.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
+    <End Type="Ban_Quan_ao_demo3Model.Chi_tiet_SP" Role="Chi_tiet_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP_ID" />
+      </Principal>
+      <Dependent Role="Chi_tiet_SP">
+        <PropertyRef Name="MaSP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Size_Color_SIZE1">
+    <End Type="Ban_Quan_ao_demo3Model.SIZE" Role="SIZE" Multiplicity="0..1" />
+    <End Type="Ban_Quan_ao_demo3Model.Chi_tiet_SP" Role="Chi_tiet_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIZE">
+        <PropertyRef Name="MaSize" />
+      </Principal>
+      <Dependent Role="Chi_tiet_SP">
+        <PropertyRef Name="MaSize" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_Mua_MAUSAC">
+    <End Type="Ban_Quan_ao_demo3Model.MAUSAC" Role="MAUSAC" Multiplicity="0..1" />
+    <End Type="Ban_Quan_ao_demo3Model.SanPham_Mua" Role="SanPham_Mua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MAUSAC">
+        <PropertyRef Name="MaMau" />
+      </Principal>
+      <Dependent Role="SanPham_Mua">
+        <PropertyRef Name="mamau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_Mua_SIZE">
+    <End Type="Ban_Quan_ao_demo3Model.SIZE" Role="SIZE" Multiplicity="0..1" />
+    <End Type="Ban_Quan_ao_demo3Model.SanPham_Mua" Role="SanPham_Mua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIZE">
+        <PropertyRef Name="MaSize" />
+      </Principal>
+      <Dependent Role="SanPham_Mua">
+        <PropertyRef Name="masize" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

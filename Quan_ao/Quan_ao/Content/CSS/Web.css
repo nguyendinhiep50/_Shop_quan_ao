@@ -1,0 +1,684 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+span {
+    color: #1E90FF;
+}
+.border {
+    border: 1px solid #999;
+    
+}
+/* style header */
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../IMG/2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/* style nav */
+.nav {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    padding-left: 5%;
+}
+.nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px ;
+}
+.nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+}
+.nav ul li a:hover {
+    color: #1E90FF;
+    transition: 0.5s;
+}
+.nav ul li a::after {
+    content: "";
+    width: 0;
+    position: absolute;
+    border-bottom: 3px solid #1E90FF;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+/* style nav::after:hover */
+.nav ul li a:hover::after {
+    width: 100%;
+}
+/* style btn-header */
+.btn-header {
+    padding-right: 5%;
+}
+.nav button {
+    padding: 5px 15px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    position: relative;
+    z-index: 1;
+}
+.nav button::after {
+    content: "";
+    width: 0;
+    height: 101%;
+    background-color: #1E90FF;
+    left: 0 ;
+    top:0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    transition: 0.5s;
+}
+.nav button:hover:after {
+    width: 100%;
+    /* border: 1px solid #000; */
+} 
+/* style text-header */
+
+.text-header {
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.text-header h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+}
+/* style navbar-header */
+.navbar-header {
+    width:60%;
+    background-color: #fff;
+    margin: auto;
+    height: 60px;
+    border-radius: 50px;
+    position: relative;
+}
+.navbar-header form {
+    padding-top: 10px;
+    margin-left: 15px
+
+}
+.navbar-header label{
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+}
+.navbar-header input {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.navbar-header div {
+    display: inline-block;
+    /* border-right: 1px solid #000; */
+    /* border-left: 1px solid #000; */
+    margin-left: 15px;
+    position: relative;
+}
+.navbar-header div::after {
+    content: "";
+    position: absolute;
+    /* width: 1px; */
+    height: 100%;
+    left: 5;
+    top: 0;
+    border-right: 1px solid #000;
+    background-color: #000;
+}
+/* style search */
+
+.navbar-header .search {
+    position: relative;
+    top: -9px;
+    left: 71px;
+    padding: 20px;
+    background-color: #1E90FF;
+    border-radius: 180%;
+}
+.navbar-header .search::after {
+    border: none;
+}
+.search i {
+    color: #fff;
+}
+/* style .search-input */
+/* .search-input {
+    position: absolute;
+    top: 13%;
+    width: 100px;
+    right: 40px;
+}
+.search-input input {
+   background: none;
+   padding: 10PX;
+} */
+/* style Exclusives */
+.container {
+    width: 80%;
+    margin: auto;
+}
+.exclusives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+.exclusives-text {
+    margin: 50px 0 20px;
+    color: #333;
+}
+.exclusives div img {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+}
+.exclusives div {
+    position: relative;
+}
+.exclusives div span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #000;
+    transform: translate(-50%, -50%);
+    /* color: #fff; */
+    text-shadow: 0 0 10px rgba(243, 236, 236, 0.9);
+    background-color: #fff;
+    mix-blend-mode: screen;
+    width: 100%;
+}
+/* style TRENDING */
+
+.trending-text {
+    margin: 50px 0 20px;
+    color: #333;
+}
+.trending {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 35px;
+}
+.trending div img {
+    width: 100%;
+    height: 440px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+}
+.trending div {
+    position: relative;
+}
+.trending div:hover {
+    transform: translateY(-10px);
+}
+.trending div:hover span {
+    color: #ff3333;
+    text-shadow: 10px #fff;
+}
+
+.trending div span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+/* style sharing */
+.sharing {
+    margin: 80px 0;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(to right, #3f2321, transparent), url(../IMG/HomeStay.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+.sharing h3 {
+    font-size: 45px;
+    color: #fff;
+    margin-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding-top: 70px;
+    margin-bottom: 5px;
+}
+.sharing p {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 15px;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+.sharing a {
+    padding: 15px 20px;
+    background-color: transparent;
+    text-decoration: none;
+    margin-left: 15px;
+    color: #fff;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    border: 1px solid #fff;
+}
+.sharing a:hover {
+    background-color: #ff3333;
+    transition: 0.7s;
+}
+/* style travel story */
+.travel-text {
+    margin: 50px 0 20px;
+    color: #333;
+}
+.travel-story {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 35px;
+}
+.travel-story div img {
+    width: 100%;
+    height: 550px;
+    border-radius: 10px;
+}
+.travel-story div {
+    position: relative;
+}
+.travel-story div span {
+    width: 80%;
+    margin-left: 10%;
+    position: absolute;
+    color: #fff;
+    top: 80%;
+    left: 0;
+    text-align: justify;
+    display: none;
+}
+.travel-story div:hover span {
+    display: inline;
+    color: #FFF;
+}
+/* style btn-travel */
+.btn-travel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.btn-travel button {
+    padding: 20px 40px; 
+    background-color: #ff3333;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.btn-travel button:hover {
+    transform: scale(1.1);
+}
+/* style about-text */
+.about-text {
+    width: 100%;
+}
+.about-text h3 {
+    color: rgb(71, 71, 71);
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+.about-text p {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: rgb(84, 83, 83);
+    line-height: 1.5;
+}
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.footer a {
+    padding: 0px 15px;
+    color: #000;
+}
+.footer i {
+    font-size: 20px;
+    cursor: pointer;
+}
+.text-footer {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.nav .fa-bars {
+    display: none;
+    color: #FFF;
+}
+/* for small screen devices */
+@media only screen and (max-width: 700px) {
+    .logo {
+        position: fixed;
+        top: 4%;
+        left: 4%;
+    }
+    .nav {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        display: inline-block;
+        width: 100%;
+        padding: 170px 7% 0;
+        background-color: #000;
+        text-align: center; 
+        /* max-height: 10px;
+        overflow: hidden; */
+
+    }
+    .nav li {
+        margin: 5px 0;   
+    }
+    .nav ul li a { 
+        font-weight: normal;
+        font-size: 15px;
+    }
+    /* .nav .fa-bars {
+        display: block;
+        position: fixed;
+        top: 4%;
+        right: 7%;
+        font-size: 28px;
+    } */
+    ul {
+        position: fixed;
+        top: 4%;
+        display: inline-block;
+    }
+    .btn-header {
+        position: fixed;
+        top: 15%;
+        right: 4% ;
+    }
+    .text-header h1 {
+        position: fixed;
+        text-align: center;
+        margin-top: -15%;
+        width: 100%;
+        font-size: 20px;
+    }
+    .navbar-header {
+        position: fixed;
+        height: 240px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+    }
+    .navbar-header .search {
+        position: fixed;
+        margin-top: 80%;
+    }
+    .navbar-header div::after {
+        border: none;
+    }
+    .navbar-header div, .navbar-header input {
+        text-align: center;
+    }
+    .navbar-header {
+        border-radius: 0px;
+    }
+    
+    .hidemenu {
+        max-height: 300px;
+    }
+}
+
+/* style listing Homstay */
+#navbar {
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px 0;
+}
+#navbar ul li a {
+    color: #000;
+}
+#navbar ul li a:hover {
+    color: #ff3333;
+    transition: 0.5s;
+}
+#navbar button {
+    border: 1px solid #000;
+    color: #000;
+}
+#navbar span {
+    color: #ff3333;
+}
+#navbar ul li a::after {
+    content: "";
+    width: 0;
+    position: absolute;
+    border-bottom: 3px solid #ff3333;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+/* style nav::after:hover */
+#navbar ul li a:hover::after {
+    width: 100%;
+}
+/* style btn-header */
+.btn-header {
+    padding-right: 5%;
+}
+#navbar button {
+    padding: 5px 15px;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #000;
+    position: relative;
+    z-index: 1;
+}
+#navbar button::after {
+    content: "";
+    width: 0;
+    height: 101%;
+    background-color: #ff3333;
+    left: 0 ;
+    top:0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    transition: 0.5s;
+}
+#navbar button:hover:after {
+    width: 100%;
+} 
+
+/* style list-container */
+.list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+/* style .boxleft */
+.boxleft {
+    flex-basis: 70%;
+}
+.boxleft small {
+    color: #333;
+}
+.boxleft p {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 20px 0;   
+}
+/* style .boxright */
+.boxright {
+    flex-basis: 25%;
+    margin-left: 40px;
+}
+.boxright .filter-home {
+    border: 0.1px solid #000;
+    padding: 20px 30px;     
+    margin-top: 87px;
+}
+.boxright .filter-home h1 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.boxright .filter-home  h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 200px;
+}
+/* style filter */
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px 0;
+}
+.filter p {
+    flex: 1;
+    text-align: left;
+    margin-left: 15px;
+}
+.filter span {
+    margin-left: 20px;
+    color: #000;
+}
+/* style .house */
+.house {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.house .house-img {
+    margin-top: 30px;
+    flex-basis: 40%;
+}
+.house .house-img img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+.house-info {
+    margin-top: 10px;
+    flex-basis: 58%;
+}
+.house .house-info p {
+    font-weight: normal;
+    font-size: 14px; 
+    color: #333;
+}
+.house .house-info h3 {
+    color: #333;
+}
+.house-info i {
+    color: #FFD700;
+}
+/* style price */
+.price {
+    text-align: right;
+}
+.price small {
+    color: #333;
+}
+.price p {
+    font-weight: bold;
+}
+.price span {
+    color: #999;
+}
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+.arrow-container img {
+    width: 35px;
+    margin: 10px 20px;
+}
+.arrow-container span {
+    margin: 10px 20px;
+    color: #000;
+}
+.arrow-container .color-current {
+    padding: 10px 15px;
+    border-radius: 100px;
+    background-color: #000;
+    color: #FFF;
+}
+
+/* for small screen container */
+@media only screen and (max-width: 700px) {
+    .list-container {
+        margin-top: 200px;
+    }
+    .boxleft, .boxright, .house-img, .house-info {
+        flex-basis: 100%;
+    }
+    #navbar {
+        padding: 80px 0;
+    }
+    .boxright {
+       margin: auto;
+    }
+    .arrow-container span {
+        margin: 0 5px;
+    }
+    .arrow-container img {
+        width: 20px;
+        margin: 0px 10px;
+    }
+}
