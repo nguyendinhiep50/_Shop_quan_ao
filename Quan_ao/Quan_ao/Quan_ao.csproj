@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quan_ao</RootNamespace>
     <AssemblyName>Quan_ao</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44378</IISExpressSSLPort>
@@ -60,9 +60,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -75,6 +75,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\cssBTrap\bootstrap-grid.css" />
+    <Content Include="Content\cssBTrap\bootstrap-grid.min.css" />
+    <Content Include="Content\cssBTrap\bootstrap-grid.rtl.css" />
+    <Content Include="Content\cssBTrap\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.css" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.min.css" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.css" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.min.css" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\cssBTrap\bootstrap.css" />
+    <Content Include="Content\cssBTrap\bootstrap.min.css" />
+    <Content Include="Content\cssBTrap\bootstrap.rtl.css" />
+    <Content Include="Content\cssBTrap\bootstrap.rtl.min.css" />
     <Content Include="Content\CSS\lightbox.css" />
     <Content Include="Content\CSS\Sales.css" />
     <Content Include="Content\CSS\Web.css" />
@@ -90,10 +106,23 @@
     <Content Include="Content\IMG\CONGTHUONG.png" />
     <Content Include="Content\IMG\Cầu Rồng.jpg" />
     <Content Include="Content\IMG\DMCA.png" />
-    <Content Include="Content\IMG\echxanh.jpg" />
     <Content Include="Content\IMG\HCM.jpg" />
     <Content Include="Content\IMG\HomeStay.jpg" />
     <Content Include="Content\IMG\Hongkong.jpg" />
+    <Content Include="Content\IMG\IVY  ITEMS3.jpg" />
+    <Content Include="Content\IMG\IVY  ITEMS5.jpg" />
+    <Content Include="Content\IMG\IVY  ITEMS6.jpg" />
+    <Content Include="Content\IMG\IVY  ITEMS7.jpg" />
+    <Content Include="Content\IMG\IVY ITEMS1.jpg" />
+    <Content Include="Content\IMG\IVY ITEMS2.jpg" />
+    <Content Include="Content\IMG\IVY ITEMS3.jfif" />
+    <Content Include="Content\IMG\IVY ITEMS4.jpg" />
+    <Content Include="Content\IMG\IVY ITEMS8.jpg" />
+    <Content Include="Content\IMG\IVY ITEMS9.jpg" />
+    <Content Include="Content\IMG\IVY SALE.jpg" />
+    <Content Include="Content\IMG\IVY SALE1.jpg" />
+    <Content Include="Content\IMG\IVY SALE2.jpg" />
+    <Content Include="Content\IMG\IVY SALE3.jpg" />
     <Content Include="Content\IMG\loading.gif" />
     <Content Include="Content\IMG\New-york.jpg" />
     <Content Include="Content\IMG\next.png" />
@@ -107,7 +136,6 @@
     <Content Include="Content\IMG\sale_03.jpg" />
     <Content Include="Content\IMG\sale_04.jpg" />
     <Content Include="Content\IMG\sale_05.jpg" />
-    <Content Include="Content\IMG\SanPham.jpg" />
     <Content Include="Content\IMG\Sapa.jpg" />
     <Content Include="Content\IMG\shirt_01.jpg" />
     <Content Include="Content\IMG\shirt_02.jpg" />
@@ -120,6 +148,12 @@
     <Content Include="Content\IMG\Đà Lạt.jpg" />
     <Content Include="Content\IMG\Đài Loan.jpg" />
     <Content Include="Content\IMG\Đầm.jpeg" />
+    <Content Include="Content\jsBTrap\bootstrap.bundle.js" />
+    <Content Include="Content\jsBTrap\bootstrap.bundle.min.js" />
+    <Content Include="Content\jsBTrap\bootstrap.esm.js" />
+    <Content Include="Content\jsBTrap\bootstrap.esm.min.js" />
+    <Content Include="Content\jsBTrap\bootstrap.js" />
+    <Content Include="Content\jsBTrap\bootstrap.min.js" />
     <Content Include="Content\JS\Chose_SP.js" />
     <Content Include="Content\JS\Gio_Hang.js" />
     <Content Include="Content\JS\lightbox-plus-jquery.js" />
@@ -318,6 +352,28 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\jsBTrap\bootstrap.bundle.js.map" />
+    <Content Include="Content\jsBTrap\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\jsBTrap\bootstrap.esm.js.map" />
+    <Content Include="Content\jsBTrap\bootstrap.esm.min.js.map" />
+    <Content Include="Content\jsBTrap\bootstrap.js.map" />
+    <Content Include="Content\jsBTrap\bootstrap.min.js.map" />
+    <Content Include="Content\cssBTrap\bootstrap-grid.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-grid.min.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap.min.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap.rtl.css.map" />
+    <Content Include="Content\cssBTrap\bootstrap.rtl.min.css.map" />
     <None Include="packages.config" />
     <Content Include="View\Admin\Page_Admin.Master" />
     <Content Include="View\User\Page_User.Master" />

@@ -7,7 +7,7 @@
 }
 .logo span {
     color: #ff3333;
-    font-size: 30px;
+    font-size: 26px;
 }
 .color1 {
     color: rebeccapurple;
@@ -29,7 +29,7 @@ header nav ul {
     list-style: none;   
 }
 header .logo h2 {
-    font-size: 28px;
+    font-size: 24px;
     letter-spacing: 2px;
 }
 header nav ul li {
@@ -55,7 +55,7 @@ header nav ul li a::after {
     height: 3px;
     background-color: #ff3333;
     left: 0;
-    bottom: -10px;
+    bottom: -3px;
     transition: 0.5s;
 }
 header nav ul li a:hover:after {
@@ -83,13 +83,18 @@ header .menubar ul li input[type="text"] {
     position: relative;
     border-radius: 8px;
     padding-left: 50px;
+    z-index: -1;
     border:none;
     border: 1px solid rgba(75, 72, 72, 0.5);
+
 }
-header .menubar ul li .fa-search {
+.menubar ul li {
+  position: relative;
+}
+.menubar ul li .fa-search {
     position: absolute;
-    top: 37%;
-    right: 24%;
+    top: 30%;
+    left: 3%;
     color: #666;
     font-size: 20px;
 }
@@ -97,6 +102,7 @@ header .menubar ul li .fa-search {
 
 .menu {
     position: relative;
+    top: 20px;
 }
 .menu .nu:hover .submenu {
     display: block;
@@ -136,7 +142,7 @@ header .menubar ul li .fa-search {
     background: #eeeef5;
     margin-top: 4%; 
     display: none;
-    top: 30px;
+    top: 20px;
     left: 0;
 }
 .submenu li a {
@@ -180,30 +186,32 @@ header .menubar ul li .fa-search {
     margin: 0px 60px;
 }
 /* style container */
-.container {
+.containerr {
     width: 90%;
     margin: auto;
     /* background-color: aquamarine; */
     padding-top: 5%;
+    margin-bottom: 30px;
 }
-.container .navbar {
+.containerr .navbar {
     width: 100%;
-    height: 10%;
     background-color: #ff3333;
     display: flex;
-    flex-wrap: wrap;
+    margin: 0;
+    height: 50px;
+    padding: 0;
 }
 .navbar p {
     padding: 20px;
 }
-.navbar .left-container {
+.navbar .left-containerr {
     flex-basis: 33%;
     text-align: center;
     background-color: #ff3333;
     font-size: 18px;
     font-weight: 400;
 }
-.navbar .center-container {
+.navbar .center-containerr {
     flex-basis: 34%;
     text-align: center;
     text-transform: uppercase;
@@ -211,7 +219,7 @@ header .menubar ul li .fa-search {
     font-size: 18px;
     font-weight: 400;
 }
-.navbar .right-container {
+.navbar .right-containerr {
     flex-basis: 33%;
     text-align: center;
     text-transform: uppercase;
@@ -226,6 +234,7 @@ header .menubar ul li .fa-search {
     /* height: 100vh; */
     margin: auto;
     overflow: hidden;
+    padding-bottom: 50px;
     
 }
 .paner-img {
@@ -254,7 +263,6 @@ header .menubar ul li .fa-search {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 3px solid #000;
 
     /* background-color: #666; */
 }
@@ -272,17 +280,38 @@ header .menubar ul li .fa-search {
     background-color: #666;
 }
 /* style app-container */
+.border-app-container {
+     border-top: 3px solid #dddddd;
+     width: 100%;
+     margin-top: 30px;
+}
 .app-container {
-    width: 90%;
-    height: 100vh;
-    margin: auto;
+   
     display: flex;
+    width: 100%;
+    height: 50vh;
     /* flex-wrap: wrap; */
+    /* align-items: center; */
     align-items: center;
     justify-content: space-around;
-    margin-bottom: -100px;
+    padding: 10px 0;
 }
-
+.thongtin {
+    flex-basis: 43%;
+    height: 100%;
+}
+.gioithieu  {
+    flex-basis: 15%;
+    height: 100%;
+}
+.dichvu  {
+    flex-basis: 25%;
+    height: 100%;
+}
+.lienhe  {
+    flex-basis: 18%;
+    height: 100%;
+}
 /*.footer_container {
         width: 100%;
         clear: both;
@@ -292,99 +321,6 @@ header .menubar ul li .fa-search {
 }
 
 /* style thongtin */
-.thongtin {
-    flex-basis: 20%;    
-}
-.thongtin-img img {
-    width: 80px;
-}
-.thontin-content p {
-    padding: 10px 0;
-    letter-spacing: 1.4px;
-    font-size: 13px;
-}
-/* style gioithieu */
-.gioithieu {
-    flex-basis: 20%;
-    margin-top: -60px;
-    text-align: center;
-}
-.gioithieu p {
-    padding: 10px 0;
-    letter-spacing: 1.4px;
-    font-size: 13px;
-}
-/* style dichvu */
-.dichvu {
-    flex-basis: 20%;
-    margin-top: 60px;
-    text-align: center;
-}
-.dichvu p {
-    padding: 10px 0;
-    letter-spacing: 1.4px;
-    font-size: 13px;
-}
-/* style lienhe */
-.lienhe {
-    flex-basis: 20%;
-    margin-top: 30px;
-    text-align: center;
-}
-.lienhe p {
-    padding: 10px 0;
-    letter-spacing: 1.4px;
-    font-size: 13px;
-}
-/* style save-gmail */
-.save-gmail {
-    flex-basis: 20%;
-    margin-top: 30px;
-}
-.save-gmail p {
-    padding: 10px 0;
-    letter-spacing: 1.4px;
-    font-size: 13px;
-}
-.save-gmail .box-gmail {
-    width: 100%;
-    height: 200px;
-    /* background-color: #333; */
-    border: 1px solid #000;
-    border-top-right-radius: 50px ;
-    border-bottom-left-radius: 50px ; 
-}
-.box-gmail h3 {
-    width: 80%;
-    margin: auto;
-    text-align: left;
-    margin-bottom: 20px;
-    margin-top: 25px;
-}
-.box-gmail .btn {
-    width: 100%;
-    margin: auto;
-    padding-left: 28px;
-}
-.box-gmail input {
-    padding: 7px 1px;
-    border: none;
-    border-bottom: 1px solid #999;
-    outline: none;
-}
-.box-gmail button {
-    padding: 7px 1px;
-    background: none;
-    border-top-right-radius: 5px ;
-    border-bottom-left-radius: 5px ; 
-    border: none;
-    border: 1px solid #999;
-    outline: none;
-}
-.box-gmail button:hover {
-    background-color: #C82E31;
-    transition: 0.5s;
-}
 /* style footer  */
 .footer {
     border-top: 1px solid rgb(157, 155, 155);
@@ -393,6 +329,7 @@ header .menubar ul li .fa-search {
     padding: 10px 0;
     text-align: center;
     color: #666;
+    width: 100%;
     
 }
 
@@ -400,7 +337,7 @@ header .menubar ul li .fa-search {
 .cartegory {
     height: 100%;
     width: 100%;
-    margin: auto;
+    
     margin-top: -20px;
     /* background-color: #e57f37; */
 }
@@ -1146,7 +1083,7 @@ header .menubar ul li .fa-search {
 .abate_container_right {
     flex-basis: 45%;
     /* background-color: #16c0eb; */
-    height: 600px;
+    height: 60      0px;
     padding-left: 80px;
     border-left: 1px solid #dddddd;
 }
@@ -1192,4 +1129,87 @@ header .menubar ul li .fa-search {
 }
 .abate_container_right_bottom table tr td {
     padding: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  (max-width: 750px) {
+   .app-container {
+    display: block;
+    text-align: center;
+    height: 250px;
+   } 
+   .footer {
+    position: relative;
+    width: 100%;
+    top: 900px;        
+   }
+   .lienhe {
+    padding-top: 100px;
+   }
+   .gioithieu {
+       padding-top: 30px;
+   }
+   .slider {
+    width: 100%;
+   }
+    .header .logo h2 {
+        font-size: 14px;
+    }
+    .menubar input {
+        width: 10px;
+        margin-left: -40px;
+    }
+   .menubar ul li .fa-search {
+    display: none;
+   }
+   header .menubar ul li input[type="text"] {
+    outline: none;
+    padding: 8px 20px;
+    position: relative;
+    border-radius: 8px;
+    padding-left: 80px;
+   }
+   .paner-img {
+    margin-top: 90px;
+    height: 200px;
+   }
+   .paner-img img {
+    padding: 0px 40px;
+    object-fit: cover;
+    border-top-right-radius: 0px ;
+    border-bottom-left-radius: 0px ; 
+   }
+   .containerr {
+    display: none;
+   }
+   header .menu {
+    display: none;
+   }
 }
