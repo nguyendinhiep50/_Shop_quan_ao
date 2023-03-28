@@ -19,17 +19,23 @@
              margin: 20px auto;
         }
         .SapXep_Gia{
+            box-shadow: 0px 1px 8px 0px rgba(158, 158, 158, 0.75);
             width: 100%;
             padding: 20px;
-            box-shadow: 0px 1px 8px 0px rgba(158, 158, 158, 0.75);
-            margin: 0 auto;
+            display:flex;
+            justify-content:space-around;
 
         }
-        .SapXep_Gia .danhmuc_header p{
+        .SapXep_Gia .danhmuc_header{
+            border-right: 2px solid rgb(233, 233, 233);
+             padding-right: 80px;
+        }
+        .SapXep_Gia .danhmuc_header  p{
             font-weight:bold;
         } 
+        
         .SapXep_Gia .danhmuc_header .danhmuc_item select{
-            width:250px;
+            width:180px;
         }
         .SapXep_Gia:hover{
             box-shadow: 0px 1px 8px 0px rgba(158, 158, 158, 0.75);
@@ -47,14 +53,26 @@
             border:1px solid #008B8B;
             float:left;
         }
+        .SapXep_Gia .sanpham_price{
+             border-right: 2px solid rgb(233, 233, 233);
+             padding-right: 80px;
+        }
         .SapXep_Gia .sanpham_price p{
             font-weight:bold;
         }
+        .SapXep_Gia .gia_TG p {
+                font-weight: bold;
+                margin-bottom: 5px;
+        }
         .SapXep_Gia .sanpham_price #MainContent_txt_min{
-            width:85px;
+            width: 100px;
+            height: 25px;
+            margin-left: 10px;
         }
         .SapXep_Gia .sanpham_price #MainContent_txtmax{
-            width:85px;
+            width: 100px;
+             height: 25px;
+             margin-left: 10px;
         }
         .SapXep_Gia .sanpham_price #MainContent_btn_loc_gia:hover {
                 background: #fe4c50;
@@ -62,23 +80,22 @@
                 transition:0.5s;
 
         }
-        .SapXep_Gia .sanpham_price #MainContent_btn_giamdan{
+        .SapXep_Gia .gia_TG #MainContent_btn_giamdan{
             background-color:#008B8B;
             color:white;
             padding-bottom: 5px;
-            padding-top: 5px;
-            margin-top: 10px;
+            padding-top: 5px;         
             border:1px solid #008B8B;
             width: 110px;
             font-weight:bold;
             margin-right:27px;
         }
-        .SapXep_Gia .sanpham_price #MainContent_btn_giamdan:hover{
+        .SapXep_Gia .gia_TG #MainContent_btn_giamdan:hover{
              background: #fe4c50;
              border:1px solid #fe4c50;
              transition:0.5s;
         }
-         .SapXep_Gia .sanpham_price #MainContent_btn_tangdan{
+         .SapXep_Gia .gia_TG #MainContent_btn_tangdan{
             background-color:#008B8B;
             color:white;
             padding-bottom: 5px;
@@ -89,7 +106,7 @@
 
 
          }
-         .SapXep_Gia .sanpham_price #MainContent_btn_tangdan:hover{
+         .SapXep_Gia .gia_TG #MainContent_btn_tangdan:hover{
              background: #fe4c50;
              border:1px solid #fe4c50;
              transition:0.5s;
@@ -146,8 +163,9 @@
          
             <div class="danhmuc_item">
      <asp:DropDownList ID="DDL_danhmuc" runat="server" OnSelectedIndexChanged="DDL_danhmuc_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-            </div>
-         </div> <br />
+         </div>
+     </div>
+        
        
     <div class=" sanpham_price">
         <p>GIÁ SẢN PHẨM</p>
@@ -158,10 +176,12 @@
     <asp:Button ID="btn_loc_gia" runat="server" Text="SubMit" OnClick="btn_loc_gia_Click"/> <br />
     <asp:CompareValidator ID="CV_sosanh" runat="server" ErrorMessage="Phải nhỏ hơn giá từ" ControlToCompare="txt_min" ControlToValidate="txtmax" Operator="GreaterThanEqual" Type="Double"></asp:CompareValidator>
     <br />
-    <p>GIÁ</p>
+     </div>
+        <div class="gia_TG">
+    <p>GIÁ</p> 
     <asp:Button ID="btn_giamdan" runat="server" Text="Giảm dần" OnClick="btn_giamdan_Click" />
     <asp:Button ID="btn_tangdan" runat="server" Text="Tăng dần" OnClick="btn_tangdan_Click" />
-    </div>
+   </div>
     <br />
     </div>
     <asp:Repeater ID="rptProducts" runat="server">
@@ -178,4 +198,5 @@
             </ItemTemplate>
        
         </asp:Repeater>
+         
 </asp:Content>

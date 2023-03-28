@@ -43,8 +43,9 @@
             padding-top: 5px;
             border:1px solid #008B8B;
             width: 120px;
-             margin-bottom: 10px;
-             margin-top: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-weight:bold;
         }
         .products #MainContent_btn_them_gio:hover{
              background: #fe4c50;
@@ -54,7 +55,7 @@
         }
     </style>
     <div class="products" style="display: inline-block;width: 24%;">      
-    <img style="width:250px;height:300px;" src="../../Content/IMG/hinh_san_pham/product_1.png"/>
+    <img style="width:250px;height:250px;" src="../../Content/IMG/hinh_san_pham/product_1.png"/>
      <h2>Sản phẩm: <asp:Label ID="lbl_tensp" runat="server" Text=""></asp:Label></h2>
      <p>Giá: <asp:Label ID="lbl_giasp" runat="server" Text="" > <%# Eval("Gia", "{0:#,##0} Đồng") %></asp:Label></p>
 
