@@ -26,6 +26,7 @@
                 <div class="menu">
                     <nav>
                         <ul>
+                           
                             <li class="nu"><a href="#">Nữ</a>
                                 <ul class="submenu">
                                     <li><a href="#">Hàng mới về</a></li>
@@ -196,8 +197,8 @@
                         <li>
                             <input type="text" placeholder="   seacrh"><i class="fa fa-search" aria-hidden="true"></i></li>
                         <li><a href="#"><i class="fa fa-paw" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                        <li><a href="Gio_hang.aspx"><i class="fa fa-shopping-bag" aria-hidden="true">giỏ hàng</i></a></li>
+                        <li><a href="../DangNhap.aspx"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                        <li><a href="Gio_hang.aspx"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </header>
@@ -230,9 +231,7 @@
             <div class="dot"></div>
            </div>
         </section> 
-            <div>
-                <h2><a href="../DangNhap.aspx">Đăng nhập</a></h2>
-            </div>
+            
 
             <div class="container">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">

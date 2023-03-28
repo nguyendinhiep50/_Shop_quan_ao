@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quan_ao</RootNamespace>
     <AssemblyName>Quan_ao</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44378</IISExpressSSLPort>
@@ -130,6 +130,16 @@
     <Content Include="Content\IMG\Phan Thiết.jpg" />
     <Content Include="Content\IMG\Phú Quốc.jpg" />
     <Content Include="Content\IMG\prev.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_1.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_10.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_2.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_3.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_4.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_5.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_6.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_7.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_8.png" />
+    <Content Include="Content\IMG\hinh_san_pham\product_9.png" />
     <Content Include="Content\IMG\sale50%25.jpg" />
     <Content Include="Content\IMG\sale_01.jpg" />
     <Content Include="Content\IMG\sale_02.jpg" />
