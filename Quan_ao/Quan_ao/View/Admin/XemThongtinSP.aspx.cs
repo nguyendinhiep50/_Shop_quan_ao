@@ -19,12 +19,47 @@ namespace Quan_ao.View.Admin
                 if (Request.QueryString["ID"] != null)
                 {
                     id = Convert.ToInt32(Request.QueryString["ID"]);
+                    var result = db.SANPHAMs.Where(x => x.MaSP_ID == id).ToList();
+                    LV_thongtin_sp.DataSource = result;
+                    LV_thongtin_sp.DataBind();
+
+                    DDL_tenmuc.DataSource = db.DanhMuc_SP.ToList();
+                    DDL_tenmuc.DataTextField = "TenMuc";
+                    DDL_tenmuc.DataValueField = "MaDMSP";
+                    DDL_tenmuc.DataBind();
                 }
 
             }
-            var result = db.SANPHAMs.Where(x => x.MaSP_ID == id).ToList();
-            ListView1.DataSource = result;
-            ListView1.DataBind();
+           
         }
+
+        protected void LV_thongtin_sp_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Update")
+            {
+                ListViewDataItem item = (ListViewDataItem)e.Item;
+               
+                string txtProductName = ((TextBox)item.FindControl("txttensp")).Text;
+                string txtDescription = ((TextBox)item.FindControl("txtgia")).Text;
+                string txtPrice = ((TextBox)item.FindControl("txttinhtrang")).Text;
+
+                // Thực hiện thao tác cập nhật dữ liệu ở đây, sử dụng các giá trị dữ liệu hiện tại của ListViewItem
+            }
+        }
+
+        protected void LV_thongtin_sp_ItemUpdating(object sender, ListViewUpdateEventArgs e)
+        {
+            Response.Redirect(Request.RawUrl);
+        }
+
+
+        //protected void LV_thongtin_sp_ItemEditing(object sender, ListViewEditEventArgs e)
+        //{
+        //    LV_thongtin_sp.EditIndex = e.NewEditIndex;
+        //    LV_thongtin_sp.DataBind();
+
+        //    TextBox txttensp = (TextBox)LV_thongtin_sp.EditItem.FindControl("txttensp");
+        //    string tenSP = txttensp.Text;
+        //}
     }
 }

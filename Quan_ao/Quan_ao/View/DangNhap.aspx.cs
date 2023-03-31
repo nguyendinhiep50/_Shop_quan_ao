@@ -14,7 +14,7 @@ namespace Quan_ao.View
         protected void Page_Load(object sender, EventArgs e)
         {
             // kiểm tra Session có hay chưa
-            
+
             // Phân cấp Session
         }
 
@@ -40,13 +40,18 @@ namespace Quan_ao.View
                     Session["ADMIN"] = ktraTK;
                     Response.Redirect("Admin/DanhMuc.aspx");
                 }
-                else if (tk.PhanCap ==false)
+                else if (tk.PhanCap == false)
                 {
                     //điều hướng người dùng đến trang dành cho User
                     Session["USER"] = ktraTK;
                     Response.Redirect("User/Home.aspx");
                 }
             }
+        }
+        protected void btn_dangxuat(object sender, EventArgs e)
+        {
+            Session.Remove("ADMIN");
+            Response.Redirect("../DangNhap.aspx");
         }
     }
 }

@@ -45,15 +45,31 @@ namespace Quan_ao.View.User
                     }
                     else
                         Tao_gio(productId, mamau_web, masize_web, soluong_web);
-                    Response.Write("Success");
+                    Response.Write("<script> alert('da them thanh cong') </script>");
                 }
                 else
                 {
                     List<CartItem> cartItems = (List<CartItem>)Session["Cart"];
                     if (cartItems != null)
                     {
-                        GV_gio_hang.DataSource = cartItems.ToList();
-                        GV_gio_hang.DataBind();
+                        // Tính toán gắn giá cho sản phẩm
+                        int tongtien = 0;
+                        int giasp = 0;
+                        foreach (var CT_gio in cartItems)
+                        {
+                            CT_gio.tenmau = db.MAUSACs.Find(CT_gio.MaMau).TenMau;
+                            CT_gio.TenSize = db.SIZEs.Find(CT_gio.Makichthuoc).Size1;
+                            CT_gio.Hinh_sp = db.SANPHAMs.Find(CT_gio.Ma_SP).URL_Hinh_Anh;
+                            CT_gio.tensp = db.SANPHAMs.Find(CT_gio.Ma_SP).TenSP;
+                            giasp = db.SANPHAMs.Find(CT_gio.Ma_SP).Gia.Value * CT_gio.So_Luong;
+                            CT_gio.Gia_Tong_SP = giasp;
+                            tongtien += giasp;
+                        }
+                        CartItem.thanhtien = tongtien;
+                        rptProducts.DataSource = cartItems.ToList();
+                        rptProducts.DataBind();
+                        lbl_thanhtien.Text = CartItem.thanhtien.ToString();
+                        lbl_tongsp.Text = cartItems.Count.ToString();
                     }
 
                 }
@@ -64,7 +80,7 @@ namespace Quan_ao.View.User
             // Lấy danh sách sản phẩm trong giỏ hàng từ session, nếu chưa có thì khởi tạo danh sách mới
             List<CartItem> cart = (List<CartItem>)HttpContext.Current.Session["Cart"];
             if (cart == null)
-            { 
+            {
                 cart = new List<CartItem>();
             }
             CartItem gio1 = new CartItem();
@@ -81,12 +97,13 @@ namespace Quan_ao.View.User
         {
             var ktraTK = Session["USER"];
             int gia_hoadon = 0;
-            if (ktraTK !=null)
+            if (ktraTK != null)
             {
                 Quan_ao.Models.TaiKhoan tk = (Quan_ao.Models.TaiKhoan)ktraTK;
                 //xử lý hoá đơn
-                db.HoaDons.Add(new Models.HoaDon {
-                     
+                db.HoaDons.Add(new Models.HoaDon
+                {
+
                     TongTien = 0,
                     MaTK = tk.MaTK,
                     DiaChi = "khong thay",
@@ -119,13 +136,53 @@ namespace Quan_ao.View.User
                 var updateHD = db.HoaDons.Find(hoadon_lay_ma.MaHoaDon);
                 updateHD.TongTien = gia_hoadon;
                 db.SaveChanges();
-               
             }
-            
-
-
         }
+        protected void btn_xoa_Click(object sender, EventArgs e)
+        {
+            int masp = int.Parse(((Button)sender).CommandArgument);
+            List<CartItem> cartItems = (List<CartItem>)Session["Cart"];
+            CartItem sp_xoa = new CartItem();
+            foreach (var sp in cartItems)
+            {
+                if (sp.Ma_SP == masp)
+                {
+                    sp_xoa = sp;
+                }
+            }
+            if (sp_xoa != null)
+            {
+                cartItems.Remove(sp_xoa);
+            }
+            //lưu lại
+            HttpContext.Current.Session["Cart"] = cartItems;
+            Response.Redirect(Request.RawUrl);// đường dẫn hiện tại
+        }
+        protected void input_SL_change(object sender, EventArgs e)
+        {
+            int so = 0;
+        }
+        protected void btn_capnhat_Click(object sender, EventArgs e)
+        {
+            // lấy ra số lượng trên web
+            Button btn_capnhat = (Button)sender;
+            RepeaterItem item = (RepeaterItem)btn_capnhat.NamingContainer;
 
-      
+            TextBox input_SL = (TextBox)item.FindControl("txtsoluong");
+            int so_luong = int.Parse(input_SL.Text);
+            // lấy ra id sản phẩm
+            int masp = int.Parse(((Button)sender).CommandArgument);
+            List<CartItem> cartItems = (List<CartItem>)Session["Cart"];
+            foreach (var sp in cartItems)
+            {
+                if (sp.Ma_SP == masp)
+                {
+                    sp.So_Luong = so_luong;
+                }
+            }
+            //lưu lại
+            HttpContext.Current.Session["Cart"] = cartItems;
+            Response.Redirect(Request.RawUrl);// đường dẫn hiện tại
+        }
     }
 }

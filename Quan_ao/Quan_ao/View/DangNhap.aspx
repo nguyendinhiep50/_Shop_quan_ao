@@ -15,7 +15,7 @@
     <form id="form1" runat="server">
         <div style="width: 50%; margin: 0 auto; margin-top: 100px">
             <div class="panel panel-info">
-                <div class="panel-heading"><b>ĐĂNG NHẬP HỆ THỐNG </b></div>
+                <div class="panel-heading"><b>ĐĂNG NHẬP TÀI KHOẢN </b></div>
                 <div class="panel-body">
                     <div class="form-horizontal">
                         <div class="form-group">

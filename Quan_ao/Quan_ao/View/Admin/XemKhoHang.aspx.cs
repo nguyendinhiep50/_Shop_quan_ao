@@ -29,7 +29,6 @@ namespace Quan_ao.View.Admin
                          where SC.MaSP_ID == id
                          select new
                          {
-                             SC.Ma_Size_Color,
                              SZ.Size1,
                              CL.TenMau,
                              SC.SoLuong,

@@ -26,6 +26,7 @@ namespace Quan_ao.View.User
                 DDL_Size.DataSource = db.SIZEs.ToList();
                 DDL_Size.DataTextField = "Size1";
                 DDL_Size.DataValueField = "MaSize";
+
                 DDL_Size.DataBind();
                 for (int i = 1; i <= 5; i++)
                 {
@@ -44,19 +45,32 @@ namespace Quan_ao.View.User
             List<CartItem> cartItems = (List<CartItem>)Session["Cart"];
             if (cartItems != null)
             {
-                List<CartItem> cart = (List<CartItem>)HttpContext.Current.Session["Cart"];
-                if (cart == null)
+                //List<CartItem> cart = (List<CartItem>)HttpContext.Current.Session["Cart"];
+                //if (cart == null)
+                //{
+                //    cart = new List<CartItem>();
+                //}
+                // kiểm tra xem có trong giỏ hàng chưa
+                CartItem sanPham = cartItems.Find(sp => sp.Ma_SP == id);
+                if (sanPham == null)
                 {
-                    cart = new List<CartItem>();
+                    CartItem gio1 = new CartItem();
+                    gio1.Ma_SP = id;
+                    gio1.So_Luong = int.Parse(DDL_Soluong.SelectedValue);
+                    gio1.MaMau = int.Parse(DDL_mau_sac.SelectedValue);
+                    gio1.Makichthuoc = int.Parse(DDL_Size.SelectedValue);
+                    gio1.Gia_Tong_SP = 0;
+                    //cart.Add(gio1);
+                    cartItems.Add(gio1);
+                    HttpContext.Current.Session["Cart"] = cartItems;
+                    Response.Write("<script> alert('da them thanh cong') </script>");
+
                 }
-                CartItem gio1 = new CartItem();
-                gio1.Ma_SP = id;
-                gio1.So_Luong = int.Parse(DDL_Soluong.SelectedValue);
-                gio1.MaMau = int.Parse(DDL_mau_sac.SelectedValue);
-                gio1.Makichthuoc = int.Parse(DDL_Size.SelectedValue);
-                cart.Add(gio1);
+                else
+                    sanPham.So_Luong += int.Parse(DDL_Soluong.SelectedValue); ;
+
                 // Lưu giỏ hàng vào session
-                HttpContext.Current.Session["Cart"] = cart;
+
             }// có giỏ thì thêm dữ liệu vào
             else
             {
@@ -73,15 +87,8 @@ namespace Quan_ao.View.User
                 cart.Add(gio1);
                 // Lưu giỏ hàng vào session
                 HttpContext.Current.Session["Cart"] = cart;
+                Response.Write("<script> alert('da them thanh cong') </script>");
 
-                // kiểm tra xem có trong giỏ hàng chưa
-                //CartItem sanPham = cartItems.Find(sp => sp.Ma_SP == id);
-                //if (sanPham == null)
-                //{
-                //    cartItems.Add(gio1);
-                //}
-                //else
-                //    sanPham.So_Luong+= int.Parse(DDL_Soluong.SelectedValue); ;
             }
         }
     }

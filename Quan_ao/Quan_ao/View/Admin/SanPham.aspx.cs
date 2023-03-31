@@ -29,7 +29,13 @@ namespace Quan_ao.View.Admin
                                  sp.LuotMua,
                              };
                 GV_SanPham.DataSource = result.ToList();
-                GV_SanPham.DataBind(); 
+                GV_SanPham.DataBind();
+
+                // phần thêm
+                ddl_danhmuc.DataSource = db.DanhMucs.ToList();
+                ddl_danhmuc.DataTextField = "TenDanhMuc";
+                ddl_danhmuc.DataValueField = "MaDanhMuc";
+                ddl_danhmuc.DataBind();
             }
         }
 
@@ -41,55 +47,6 @@ namespace Quan_ao.View.Admin
             //
             Response.Redirect("SanPham.aspx");
         }
-
-        protected void GV_SanPham_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            var sp = db.SANPHAMs.Find(int.Parse(e.NewValues["MaSP_ID"].ToString()));
-            sp.MaDMSP = int.Parse(e.NewValues["MaDMSP"].ToString());
-            sp.TenSP = (e.NewValues["TenSP"].ToString());
-            sp.Gia = int.Parse(e.NewValues["Gia"].ToString());
-            sp.TinhTrang = bool.Parse(e.NewValues["TinhTrang"].ToString());
-            sp.URL_Hinh_Anh = (e.NewValues["URL_Hinh_Anh"].ToString());
-            sp.NhanXet = e.NewValues["NhanXet"].ToString();
-            sp.DanhGia = int.Parse(e.NewValues["DanhGia"].ToString());
-            sp.LuotMua = int.Parse(e.NewValues["LuotMua"].ToString());
-            db.SaveChanges();
-            Response.Redirect("SanPham.aspx");
-        }
-
-        protected void GV_SanPham_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            GV_SanPham.EditIndex = e.NewEditIndex;
-            var result = from sp in db.SANPHAMs
-                         join dm in db.DanhMuc_SP on sp.MaDMSP equals dm.MaDMSP
-                         select new
-                         {
-                             sp.MaSP_ID,
-                             dm.TenMuc,
-                             sp.TenSP,
-                             sp.Gia,
-                             sp.TinhTrang,
-                             sp.URL_Hinh_Anh,
-                             sp.LuotMua,
-                         };
-            var row = GV_SanPham.Rows[e.NewEditIndex];
-            var data = (DropDownList)row.FindControl("TenMuc");
-            GV_SanPham.DataSource = result.ToList();
-            GV_SanPham.DataBind();
-
-            GridViewRow row1 = GV_SanPham.Rows[e.NewEditIndex];
-            DropDownList ddlTenDM = (DropDownList)row1.FindControl("ddlTenDM");
-            ddlTenDM.DataSource = db.DanhMucs.ToList();
-            ddlTenDM.DataTextField = "TenDanhMuc";
-            ddlTenDM.DataValueField = "MaDanhMuc";
-            ddlTenDM.DataBind();
-        }
-
-        protected void GV_SanPham_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            Response.Redirect("SanPham.aspx");
-        }
-
         protected void GV_SanPham_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
@@ -103,6 +60,43 @@ namespace Quan_ao.View.Admin
                 int maSP = Convert.ToInt32(e.CommandArgument);
                 Response.Redirect($"XemKhoHang.aspx?ID={maSP}");
             }
+        }
+
+        protected void btn_them_sp_Click(object sender, EventArgs e)
+        {
+            SANPHAM db_add = new SANPHAM();
+            db_add.MaDMSP = int.Parse(ddl_danhmuc.SelectedValue.ToString());
+            db_add.TenSP = txtTensp.Text;
+            db_add.Gia = int.Parse(txtgia.Text);
+            db_add.URL_Hinh_Anh = FU_IMG.FileName.ToString();
+            db_add.NhanXet = txtnhanxet.Text;
+            db_add.DanhGia = int.Parse(txtdanhgia.Text);
+            db_add.TinhTrang = true;
+            db_add.LuotMua = 0;
+            db.SANPHAMs.Add(db_add);
+            db.SaveChanges();
+            Response.Redirect("SanPham.aspx");
+        }
+
+        protected void GV_SanPham_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GV_SanPham.PageIndex = e.NewPageIndex;
+            var result = from sp in db.SANPHAMs
+                         join dm in db.DanhMuc_SP on sp.MaDMSP equals dm.MaDMSP
+                         select new
+                         {
+                             sp.MaSP_ID,
+                             dm.TenMuc,
+                             sp.TenSP,
+                             sp.Gia,
+                             sp.TinhTrang,
+                             sp.URL_Hinh_Anh,
+                             sp.LuotMua,
+                         };
+            var row = GV_SanPham.Rows[e.NewPageIndex];
+            var data = (DropDownList)row.FindControl("TenMuc");
+            GV_SanPham.DataSource = result.ToList();
+            GV_SanPham.DataBind();
         }
     }
 }

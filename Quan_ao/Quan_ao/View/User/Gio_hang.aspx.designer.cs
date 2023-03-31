@@ -15,22 +15,31 @@ namespace Quan_ao.View.User
     {
 
         /// <summary>
-        /// lbl_gio control.
+        /// rptProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_gio;
+        protected global::System.Web.UI.WebControls.Repeater rptProducts;
 
         /// <summary>
-        /// GV_gio_hang control.
+        /// lbl_tongsp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GV_gio_hang;
+        protected global::System.Web.UI.WebControls.Label lbl_tongsp;
+
+        /// <summary>
+        /// lbl_thanhtien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_thanhtien;
 
         /// <summary>
         /// btn_thanhToan control.
@@ -40,5 +49,14 @@ namespace Quan_ao.View.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_thanhToan;
+
+        /// <summary>
+        /// GV_gio_hang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GV_gio_hang;
     }
 }

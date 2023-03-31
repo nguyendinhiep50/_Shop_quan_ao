@@ -15,12 +15,21 @@ namespace Quan_ao.View.Admin
     {
 
         /// <summary>
-        /// ListView1 control.
+        /// DDL_tenmuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_tenmuc;
+
+        /// <summary>
+        /// LV_thongtin_sp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView LV_thongtin_sp;
     }
 }

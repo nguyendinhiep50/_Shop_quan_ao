@@ -55,7 +55,7 @@
         }
     </style>
     <div class="products" style="display: inline-block;width: 24%;">      
-    <img style="width:250px;height:250px;" src="../../Content/IMG/hinh_san_pham/product_1.png"/>
+    <img style="width:250px;height:250px;" src="../../Content/IMG/hinh_san_pham/<%# Eval("URL_Hinh_Anh") %>"/>
      <h2>Sản phẩm: <asp:Label ID="lbl_tensp" runat="server" Text=""></asp:Label></h2>
      <p>Giá: <asp:Label ID="lbl_giasp" runat="server" Text="" > <%# Eval("Gia", "{0:#,##0} Đồng") %></asp:Label></p>
 

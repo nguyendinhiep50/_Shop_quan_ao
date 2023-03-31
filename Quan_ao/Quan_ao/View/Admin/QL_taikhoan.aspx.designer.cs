@@ -11,16 +11,16 @@ namespace Quan_ao.View.Admin
 {
 
 
-    public partial class TaiKhoan
+    public partial class QL_taikhoan1
     {
 
         /// <summary>
-        /// GV_TaiKhoan control.
+        /// GV_Tai_Khoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GV_TaiKhoan;
+        protected global::System.Web.UI.WebControls.GridView GV_Tai_Khoan;
     }
 }

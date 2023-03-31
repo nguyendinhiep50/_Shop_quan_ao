@@ -183,8 +183,8 @@
     <Content Include="View\Admin\DanhMuc.aspx" />
     <Content Include="View\Admin\HoaDon_admin.aspx" />
     <Content Include="View\Admin\NhaCC.aspx" />
+    <Content Include="View\Admin\QL_taikhoan.aspx" />
     <Content Include="View\Admin\SanPham.aspx" />
-    <Content Include="View\Admin\TaiKhoan.aspx" />
     <Content Include="View\Admin\XemKhoHang.aspx" />
     <Content Include="View\Admin\XemThongtinSP.aspx" />
     <Content Include="View\Admin\Xem_CTHoaDon.aspx" />
@@ -282,19 +282,19 @@
     <Compile Include="View\Admin\Page_Admin.Master.designer.cs">
       <DependentUpon>Page_Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\QL_taikhoan.aspx.cs">
+      <DependentUpon>QL_taikhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\QL_taikhoan.aspx.designer.cs">
+      <DependentUpon>QL_taikhoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Admin\SanPham.aspx.designer.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Admin\TaiKhoan.aspx.cs">
-      <DependentUpon>TaiKhoan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Admin\TaiKhoan.aspx.designer.cs">
-      <DependentUpon>TaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\XemKhoHang.aspx.cs">
       <DependentUpon>XemKhoHang.aspx</DependentUpon>

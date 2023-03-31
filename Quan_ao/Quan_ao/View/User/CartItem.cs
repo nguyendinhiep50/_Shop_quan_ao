@@ -8,14 +8,22 @@ namespace Quan_ao.View.User
     public class CartItem
     {
         public int Ma_SP { get; set; }
+        public string Hinh_sp { get; set; }
+        public string tensp { get; set; }
         public int So_Luong { get; set; }
         public int MaMau { get; set; }
+        public string tenmau { get; set; }
+
         public int Makichthuoc { get; set; }
+        public string TenSize { get; set; }
+
+        public int Gia_Tong_SP { get; set; }
+        public int Thanh_tien { get; }
 
 
         public List<CartItem> cartItems = new List<CartItem>();
 
-
+        public static int thanhtien = 0;
         //private const string CACHE_KEY = "CartItems";
         //public static List<CartItem> GetItems()
         //{
