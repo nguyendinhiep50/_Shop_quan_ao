@@ -9,7 +9,7 @@
 
         .new_product h1 {
             color: #282828;
-            font-size: 35px;
+            font-size: 30px;
             text-align: center;
             margin-top: 20px;
             margin-bottom: 50px;
@@ -30,6 +30,7 @@
             padding: 20px;
             display: flex;
             justify-content: space-around;
+            margin: 0 auto;
         }
 
             .SapXep_Gia .danhmuc_header {
@@ -39,16 +40,61 @@
 
                 .SapXep_Gia .danhmuc_header p {
                     font-weight: bold;
-                }
+                    margin-bottom:10px;
+               }
 
                 .SapXep_Gia .danhmuc_header .danhmuc_item select {
                     width: 180px;
+                    margin-bottom:10px;
                 }
 
             .SapXep_Gia:hover {
                 box-shadow: 0px 1px 8px 0px rgba(158, 158, 158, 0.75);
             }
 
+            
+
+            .SapXep_Gia .sanpham_price {
+                border-right: 2px solid rgb(233, 233, 233);
+                padding-right: 80px;
+            }
+
+            .SapXep_Gia .sanpham_price p {
+                    margin-bottom:10px;
+                    font-weight: bold;
+                   
+
+            }
+            .SapXep_Gia .sanpham_price .p_maxPrice{
+                     display: inline-block;
+                     float: left;
+
+             }
+
+            .SapXep_Gia .gia_TG p {
+                font-weight: bold;
+                margin-bottom: 5px;
+                margin-left:4px;
+            }
+
+            .SapXep_Gia .sanpham_price #MainContent_txt_min {
+                width: 135px;
+                height: 25px;
+                margin-bottom:10px;
+                margin-left:10px;
+
+                      
+
+            }
+
+            .SapXep_Gia .sanpham_price #MainContent_txtmax {
+                width: 135px;
+                height: 25px;
+                margin-left:4px;
+                margin-top: 1px;
+                float:left;
+              
+            }
             .SapXep_Gia .sanpham_price #MainContent_btn_loc_gia {
                 width: 70px;
                 height: 35px;
@@ -57,36 +103,11 @@
                 font-weight: bold;
                 padding-bottom: 10px;
                 padding-bottom: 5px;
-                padding-top: 5px;
-                margin-top: 10px;
+                padding-top: 5px;              
                 border: 1px solid #008B8B;
                 float: left;
-            }
-
-            .SapXep_Gia .sanpham_price {
-                border-right: 2px solid rgb(233, 233, 233);
-                padding-right: 80px;
-            }
-
-                .SapXep_Gia .sanpham_price p {
-                    font-weight: bold;
-                }
-
-            .SapXep_Gia .gia_TG p {
-                font-weight: bold;
-                margin-bottom: 5px;
-            }
-
-            .SapXep_Gia .sanpham_price #MainContent_txt_min {
-                width: 100px;
-                height: 25px;
-                margin-left: 10px;
-            }
-
-            .SapXep_Gia .sanpham_price #MainContent_txtmax {
-                width: 100px;
-                height: 25px;
-                margin-left: 10px;
+                border-bottom:1px solid #008B8B;
+                margin-bottom:10px;
             }
 
             .SapXep_Gia .sanpham_price #MainContent_btn_loc_gia:hover {
@@ -104,6 +125,7 @@
                 width: 110px;
                 font-weight: bold;
                 margin-right: 27px;
+                margin-bottom:8px;
             }
 
                 .SapXep_Gia .gia_TG #MainContent_btn_giamdan:hover {
@@ -120,6 +142,7 @@
                 border: 1px solid #008B8B;
                 width: 110px;
                 font-weight: bold;
+               
             }
 
                 .SapXep_Gia .gia_TG #MainContent_btn_tangdan:hover {
@@ -170,35 +193,35 @@
     <div class="new_product">
         <h1>SẢN PHẨM NỔI BẬC</h1>
     </div>
-    <div class="SapXep_Gia">
-        <div class="danhmuc_header">
+    <div class="container">
+    <div class="SapXep_Gia  row">
+        <div class="danhmuc_header col-12 col-md-4 ">
             <p>DANH MỤC SẢN PHẨM</p>
 
-            <div class="danhmuc_item">
+            <div class="danhmuc_item ">
                 <asp:DropDownList ID="DDL_danhmuc" runat="server" OnSelectedIndexChanged="DDL_danhmuc_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
             </div>
         </div>
 
 
-        <div class=" sanpham_price">
+        <div class=" sanpham_price col-12 col-md-4">
             <p>GIÁ SẢN PHẨM</p>
-            Từ
-            <asp:TextBox ID="txt_min" runat="server"></asp:TextBox>
+            <b style="color:red">Từ</b>
+            <asp:TextBox ID="txt_min" runat="server"></asp:TextBox> <br />
             <asp:CompareValidator ID="CV_giatu" runat="server" ErrorMessage="(*)" Type="Double" ControlToValidate="txt_min"></asp:CompareValidator>
-            Đến<asp:TextBox ID="txtmax" runat="server"></asp:TextBox>
+            <p class="p_maxPrice" style="color:red">Đến</p><asp:TextBox ID="txtmax" runat="server"></asp:TextBox>
             <br />
             <asp:CompareValidator ID="CV_giaden" runat="server" ErrorMessage="(*)" ControlToValidate="txtmax" Type="Double"></asp:CompareValidator>
-            <asp:Button ID="btn_loc_gia" runat="server" Text="SubMit" OnClick="btn_loc_gia_Click" />
-            <br />
-            <asp:CompareValidator ID="CV_sosanh" runat="server" ErrorMessage="Phải nhỏ hơn giá từ" ControlToCompare="txt_min" ControlToValidate="txtmax" Operator="GreaterThanEqual" Type="Double"></asp:CompareValidator>
-            <br />
+             <p><asp:Button ID="btn_loc_gia" runat="server" Text="SubMit" OnClick="btn_loc_gia_Click" /></p>         
+            <asp:CompareValidator ID="CV_sosanh" runat="server" ErrorMessage="Phải nhỏ hơn giá từ" ControlToCompare="txt_min" ControlToValidate="txtmax" Operator="GreaterThanEqual" Type="Double"></asp:CompareValidator>    
         </div>
-        <div class="gia_TG">
+        <div class="gia_TG col-12 col-md-4">
             <p>GIÁ</p>
             <asp:Button ID="btn_giamdan" runat="server" Text="Giảm dần" OnClick="btn_giamdan_Click" />
             <asp:Button ID="btn_tangdan" runat="server" Text="Tăng dần" OnClick="btn_tangdan_Click" />
         </div>
         <br />
+    </div>
     </div>
     <asp:Repeater ID="rptProducts"  runat="server">
         <ItemTemplate >
