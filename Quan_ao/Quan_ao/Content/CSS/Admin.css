@@ -1,0 +1,13 @@
+﻿.header_navbar {
+    margin-bottom: 10px;
+    background-color: #8B4513;
+    color: white;
+}
+.header_navbar a{
+    color:white;
+    font-weight:bold;
+    padding-left:20px;
+}
+.dropdown-menu a.dropdown-item{
+    color:black;
+}

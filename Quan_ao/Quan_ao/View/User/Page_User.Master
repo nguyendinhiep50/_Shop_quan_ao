@@ -5,8 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
-    <link rel="stylesheet" href="~/Content/CSS/Sales.css">
-    <link rel="stylesheet" href="~/Content/CSS/lightbox.css">
+	<link href="../plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" href="~/Content/CSS/single_styles.css">
+    <link rel="stylesheet" href="~/Content/CSS/single_responsive.css">
+	<link rel="stylesheet" href="~/Content/CSS/main_styles.css"/>
+	<link rel="stylesheet" href="~/Content/CSS/responsive.css">
     <link href="../../Content/cssBTrap/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,216 +27,172 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
         </asp:ScriptManager>
-        <div class="container">
-            <header class="row">
-                <div class="menu col-12 col-md-6 col-lg-6">
-                    <nav>
-                        <ul>
-                           
-                            <li class="nu"><a href="#">Nữ</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Hàng mới về</a></li>
-                                    <li><a href="#">Collection</a></li>
-                                    <li class="app"><a href="#">Áo</a>
-                                        <ul>
-                                            <li><a href="#">Áo sơ mi</a></li>
-                                            <li><a href="#">Áo Thun</a></li>
-                                            <li><a href="#">Áo Vest</a></li>
-                                            <li><a href="#">Áo Khoác</a></li>
-                                            <li><a href="#">Áo Len</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="tool"><a href="#">Quần</a>
-                                        <ul>
-                                            <li><a href="#">Quần Jean</a></li>
-                                            <li><a href="#">Quần Lửng</a></li>
-                                            <li><a href="#">Quần Dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nam"><a href="#">Nam</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Hàng mới về</a></li>
-                                    <li><a href="#">Collection</a></li>
-                                    <li class="app"><a href="#">Áo</a>
-                                        <ul>
-                                            <li><a href="#">Áo sơ mi</a></li>
-                                            <li><a href="#">Áo Thun</a></li>
-                                            <li><a href="#">Áo Vest</a></li>
-                                            <li><a href="#">Áo Khoác</a></li>
-                                            <li><a href="#">Áo Len</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="tool"><a href="#">Quần</a>
-                                        <ul>
-                                            <li><a href="#">Quần Jean</a></li>
-                                            <li><a href="#">Quần Lửng</a></li>
-                                            <li><a href="#">Quần Dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="treem"><a href="#">Trẻ Em</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Hàng mới về</a></li>
-                                    <li><a href="#">Collection</a></li>
-                                    <li class="app"><a href="#">Áo</a>
-                                        <ul>
-                                            <li><a href="#">Áo sơ mi</a></li>
-                                            <li><a href="#">Áo Thun</a></li>
-                                            <li><a href="#">Áo Vest</a></li>
-                                            <li><a href="#">Áo Khoác</a></li>
-                                            <li><a href="#">Áo Len</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="tool"><a href="#">Quần</a>
-                                        <ul>
-                                            <li><a href="#">Quần Jean</a></li>
-                                            <li><a href="#">Quần Lửng</a></li>
-                                            <li><a href="#">Quần Dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="sale"><a href="#">Sale</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Hàng mới về</a></li>
-                                    <li><a href="#">Collection</a></li>
-                                    <li class="app"><a href="#">Áo</a>
-                                        <ul>
-                                            <li><a href="#">Áo sơ mi</a></li>
-                                            <li><a href="#">Áo Thun</a></li>
-                                            <li><a href="#">Áo Vest</a></li>
-                                            <li><a href="#">Áo Khoác</a></li>
-                                            <li><a href="#">Áo Len</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="tool"><a href="#">Quần</a>
-                                        <ul>
-                                            <li><a href="#">Quần Jean</a></li>
-                                            <li><a href="#">Quần Lửng</a></li>
-                                            <li><a href="#">Quần Dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
 
-                            <li class="khautrang"><a href="#">Khẩu Trang</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Hàng mới về</a></li>
-                                    <li><a href="#">Collection</a></li>
-                                    <li class="app"><a href="#">Áo</a>
-                                        <ul>
-                                            <li><a href="#">Áo sơ mi</a></li>
-                                            <li><a href="#">Áo Thun</a></li>
-                                            <li><a href="#">Áo Vest</a></li>
-                                            <li><a href="#">Áo Khoác</a></li>
-                                            <li><a href="#">Áo Len</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="tool"><a href="#">Quần</a>
-                                        <ul>
-                                            <li><a href="#">Quần Jean</a></li>
-                                            <li><a href="#">Quần Lửng</a></li>
-                                            <li><a href="#">Quần Dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+	<div class="super_container">
 
-                            <li class="bts"><a href="#">BTS</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Hàng mới về</a></li>
-                                    <li><a href="#">Collection</a></li>
-                                    <li class="app"><a href="#">Áo</a>
-                                        <ul>
-                                            <li><a href="#">Áo sơ mi</a></li>
-                                            <li><a href="#">Áo Thun</a></li>
-                                            <li><a href="#">Áo Vest</a></li>
-                                            <li><a href="#">Áo Khoác</a></li>
-                                            <li><a href="#">Áo Len</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="tool"><a href="#">Quần</a>
-                                        <ul>
-                                            <li><a href="#">Quần Jean</a></li>
-                                            <li><a href="#">Quần Lửng</a></li>
-                                            <li><a href="#">Quần Dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+	<!-- Header -->
 
-                            <li class="thongtin"><a href="#">Thông Tin</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Hàng mới về</a></li>
-                                    <li><a href="#">Collection</a></li>
-                                    <li class="app"><a href="#">Áo</a>
-                                        <ul>
-                                            <li><a href="#">Áo sơ mi</a></li>
-                                            <li><a href="#">Áo Thun</a></li>
-                                            <li><a href="#">Áo Vest</a></li>
-                                            <li><a href="#">Áo Khoác</a></li>
-                                            <li><a href="#">Áo Len</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="tool"><a href="#">Quần</a>
-                                        <ul>
-                                            <li><a href="#">Quần Jean</a></li>
-                                            <li><a href="#">Quần Lửng</a></li>
-                                            <li><a href="#">Quần Dài</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="logo col-12 col-md-2 col-lg-2">
-                    <h2>Shop<span>Hiuu<br />
-                        <asp:Label ID="lbltenkhach" runat="server" Text=""></asp:Label>
-                    </span></h2>
-                </div>
-                <div class="menubar col-12 col-md-4 col-lg-4">
-                    <ul>
-                        <li>
-                            <input type="text" placeholder="   seacrh"><i class="fa fa-search" aria-hidden="true"></i></li>
-                        <li><a href="#"><i class="fa fa-paw" aria-hidden="true"></i></a></li>
-                        <li><a href="../DangNhap.aspx"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                        <li><a href="Gio_hang.aspx"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </header>
-            <div class="containerr">
-                <div class="navbar">
-                    <div class="left-containerr">
-                        <p>FREESHIP ĐƠN HÀNG TỪ 2 TRIỆU</p>
-                    </div>
-                    <div class="center-containerr">
-                        <p>Cảnh báo lừa đảo</p>
-                    </div>
-                    <div class="right-containerr">
-                        <p>Chính sách thẻ thành viên</p>
-                    </div>
-                </div>
-            </div>
-            <section class="slider">
-           <div class="paner-img">
-               <img src="../../Content/IMG/IVY%20SALE.jpg" />
-               <img src="../../Content/IMG/IVY%20SALE1.jpg" />
-               <img src="../../Content/IMG/IVY%20SALE2.jpg" />
-               <img src="../../Content/IMG/IVY%20SALE3.jpg" />
-               <img src="../../Content/IMG/IVY%20SALE1.jpg" />
-           </div>
-           <div class="dot-container">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-           </div>
-        </section> 
+	<header class="header trans_300">
+
+		<!-- Top Navigation -->
+
+		<div class="top_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="top_nav_left">free shipping on all u.s orders over $50</div>
+					</div>
+					<div class="col-md-6 text-right">
+						<div class="top_nav_right">
+							<ul class="top_nav_menu">
+
+								<!-- Currency / Language / My Account -->
+
+								<li class="currency">
+									<a href="#">
+										usd
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="currency_selection">
+										<li><a href="#">cad</a></li>
+										<li><a href="#">aud</a></li>
+										<li><a href="#">eur</a></li>
+										<li><a href="#">gbp</a></li>
+									</ul>
+								</li>
+								<li class="language">
+									<a href="#">
+										English
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="language_selection">
+										<li><a href="#">French</a></li>
+										<li><a href="#">Italian</a></li>
+										<li><a href="#">German</a></li>
+										<li><a href="#">Spanish</a></li>
+									</ul>
+								</li>
+								<li class="account">
+									<a href="#">
+										My Account
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="account_selection">
+										<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Navigation -->
+
+		<div class="main_nav_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-right">
+						<div class="logo_container">
+							<a href="#">colo<span>shop</span></a>
+						</div>
+						<nav class="navbar">
+							<ul class="navbar_menu">
+								<li><a href="#">home</a></li>
+								<li><a href="#">shop</a></li>
+								<li><a href="#">promotion</a></li>
+								<li><a href="#">pages</a></li>
+								<li><a href="#">blog</a></li>
+								<li><a href="contact.html">contact</a></li>
+							</ul>
+							<ul class="navbar_user">
+								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+								<li><a href="../DangNhap.aspx"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+								<li class="checkout">
+									<a href="Gio_hang.aspx">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<span id="checkout_items" class="checkout_items">2</span>
+									</a>
+								</li>
+							</ul>
+							<div class="hamburger_container">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+				<div class="fs_menu_overlay"></div>
+	<div class="hamburger_menu">
+		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+		<div class="hamburger_menu_content text-right">
+			<ul class="menu_top_nav">
+				<li class="menu_item has-children">
+					<a href="#">
+						usd
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">cad</a></li>
+						<li><a href="#">aud</a></li>
+						<li><a href="#">eur</a></li>
+						<li><a href="#">gbp</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						English
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">French</a></li>
+						<li><a href="#">Italian</a></li>
+						<li><a href="#">German</a></li>
+						<li><a href="#">Spanish</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						My Account
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+					</ul>
+				</li>
+				<li class="menu_item"><a href="#">home</a></li>
+				<li class="menu_item"><a href="#">shop</a></li>
+				<li class="menu_item"><a href="#">promotion</a></li>
+				<li class="menu_item"><a href="#">pages</a></li>
+				<li class="menu_item"><a href="#">blog</a></li>
+				<li class="menu_item"><a href="#">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Slider -->
+
+	<div class="main_slider" style="background-image:url(../../Content/IMG/hinh_san_pham/slider_1.jpg)">
+		<div class="container fill_height">
+			<div class="row align-items-center fill_height">
+				<div class="col">
+					<div class="main_slider_content">
+						<h6>Spring / Summer Collection 2017</h6>
+						<h1>Get up to 30% Off New Arrivals</h1>
+						<div class="red_button shop_now_button"><a href="#">shop now</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
             
 
             <div class="container ">
@@ -239,57 +201,62 @@
 
             </div>
             <hr />
-            <%-- ĐÃ xong phần dưới --%>
-            <footer>
-                <section class="slider">
-                </section>
+		<!-- Newsletter -->
 
-                <p class="border-app-container"></p>
-                <section class="app-container container">
-                    <div class="thongtin">
-                        <div class="thongtin-img">
-                            <img src="https://pubcdn3.ivymoda.com/ivy2/images/logo-footer.png" alt="">
-                            <img src="/Content/IMG/DMCA.png" alt="">
-                            <img src="/Content/IMG/CONGTHUONG.png" alt="">
-                            <div class="thontin-content">
-                                <p>Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650</p>
-
-                                <p>Địa chỉ đăng ký: Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm, TP.Hà Nội, Việt Nam</p>
-
-                                <p>Số điện thoại: 0243 205 2222</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gioithieu">
-                        <h2>Giới thiệu</h2>
-                        <p>Về IVY moda</p>
-                        <p>Tuyển dụng</p>
-                        <p>Hệ thống cửa hàng</p>
-                    </div>
-                    <div class="dichvu">
-                        <h2>Dịch vụ khách hàng</h2>
-                        <p>Chính sách điều khoản</p>
-                        <p>Hướng dẫn mua hàng</p>
-                        <p>Chính sách thanh toán</p>
-                        <p>Chính sách đổi trả</p>
-                        <p>Chính sách bảo hành</p>
-                        <p>Chính sách giao nhận vận chuyển</p>
-                    </div>
-                    <div class="lienhe">
-                        <h2>Liên hệ</h2>
-                        <p>Hotline</p>
-                        <p>Email</p>
-                        <p>Live Chat</p>
-                        <p>Messenger</p>
-                        <p>Liên hệ</p>
-                    </div>
-
-                </section>
-                <div class="footer">
-                    <p>©IVYmoda All rights reserved</p>
-                </div>
-            </footer>
-        </div>
+	<div class="newsletter">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
+						<h4>Newsletter</h4>
+						<p>Subscribe to our newsletter and get 20% off your first purchase</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<form action="post">
+						<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
+							<input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
+							<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+        <!--Footer-->
+        <footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+						<ul class="footer_nav">
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer_nav_container">
+						<div class="cr">Cảm ơn quý khách đã ghé <i class="fa fa-heart-o" aria-hidden="true"></i> CollShop <a href="#">.Thankyou</a> &amp; distributed by <a href="https://themewagon.com">mọi thắc mắc xin liên hệ với chúng tôi</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
     </form>
 </body>

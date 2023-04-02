@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Admin/Page_Admin.Master" AutoEventWireup="true" CodeBehind="Danhh_Muc_SP.aspx.cs" Inherits="Quan_ao.View.Admin.Danhh_Muc_SP" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+      .form-group label{
+            font-weight:bold;
+            color:#A55129;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="form-horizontal">
@@ -24,7 +30,7 @@
         </div>
     </div>
     <div>
-        <asp:GridView ID="GV_DMSP" DataKeyNames="MaDMSP" runat="server" OnRowCancelingEdit="GV_DMSP_RowCancelingEdit" OnRowDeleting="GV_DMSP_RowDeleting" OnRowEditing="GV_DMSP_RowEditing" OnRowUpdating="GV_DMSP_RowUpdating" AutoGenerateColumns="False">
+        <asp:GridView ID="GV_DMSP" DataKeyNames="MaDMSP" runat="server" OnRowCancelingEdit="GV_DMSP_RowCancelingEdit" OnRowDeleting="GV_DMSP_RowDeleting" OnRowEditing="GV_DMSP_RowEditing" OnRowUpdating="GV_DMSP_RowUpdating" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
             <Columns>
                 <asp:BoundField DataField="MaDMSP" HeaderText="Mã DM" />
                 <asp:TemplateField HeaderText="TenDanhMuc">
@@ -47,5 +53,14 @@
                 </asp:TemplateField>
 
             </Columns>
+            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+            <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FFF1D4" />
+            <SortedAscendingHeaderStyle BackColor="#B95C30" />
+            <SortedDescendingCellStyle BackColor="#F1E5CE" />
+            <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
 </asp:Content>
