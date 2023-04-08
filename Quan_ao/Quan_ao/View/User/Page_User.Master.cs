@@ -12,10 +12,6 @@ namespace Quan_ao.View.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TaiKhoan tk = (TaiKhoan)Session["USER"];
-            if (tk!=null)
-                if (tk.PhanCap == false)
-                    lbltenkhach.Text = "Tên đăng nhập:" + tk.TenNguoiDung;          
         }
     }
 }
