@@ -392,19 +392,7 @@
 		margin-bottom: 30px;
 		font-size: 13px;
 	}
-	.footer_nav
-	{
-		margin-bottom: 20px;
-	}
-	.footer_nav li
-	{
-		display: block;
-		margin-right: 0px;
-	}
-	.footer_nav li a
-	{
-		font-size: 13px;
-	}
+
 }
 
 /************
@@ -679,7 +667,7 @@
 }
 
 /************
-14. 400px
+14. 400px				
 ************/
 
 @media only screen and (max-width: 400px)

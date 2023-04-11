@@ -20,14 +20,17 @@
             <h2>Hình ảnh</h2>
             <asp:Image ID="IMG_sp" Width:200px runat="server" 
                 ImageUrl='<%# ResolveUrl("~/Content/IMG/hinh_san_pham/" + Eval("URL_Hinh_Anh")) %>' />
+            <asp:FileUpload ID="FU_hinhanh" runat="server" />
+            <h2>Link hình ảnh</h2>
+            <asp:Label ID="lbl_link_sp" Text='<%#Eval("URL_Hinh_Anh") %>' runat="server" />
             <h2>Nhận xét</h2>
-            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Eval("NhanXet") %>'></asp:TextBox>
+            <asp:TextBox ID="txtnhanxet" runat="server" Text='<%# Eval("NhanXet") %>'></asp:TextBox>
 
             <h2>Đánh giá</h2>
-            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Eval("DanhGia") %>'></asp:TextBox>
+            <asp:TextBox ID="txtdanhgia" runat="server" Text='<%# Eval("DanhGia") %>'></asp:TextBox>
 
             <h2>Lượt mua</h2>
-            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Eval("LuotMua") %>'></asp:TextBox>
+            <asp:TextBox ID="txtluotmua" runat="server" Text='<%# Eval("LuotMua") %>'></asp:TextBox>
             <asp:LinkButton runat="server" CommandName="Update" Text="Update" />
         </div>
     </ItemTemplate>

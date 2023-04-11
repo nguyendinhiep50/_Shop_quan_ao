@@ -99,7 +99,7 @@
                  <asp:BoundField DataField="Gia" HeaderText="Giá SP" />
                  <asp:TemplateField HeaderText="HinhAnh">
                         <ItemTemplate>
-                            <asp:Image ID="IMG_sp" Width:50px runat="server" ImageUrl='<%# ResolveUrl("~/Content/IMG/hinh_san_pham/" + Eval("URL_Hinh_Anh")) %>' />
+                            <asp:Image ID="IMG_sp"  Width="100" runat="server" ImageUrl='<%# ResolveUrl("~/Content/IMG/hinh_san_pham/" + Eval("URL_Hinh_Anh")) %>' />
                         </ItemTemplate>
                         <EditItemTemplate>
         <asp:FileUpload ID="File_taihinh" runat="server" />

@@ -38,37 +38,39 @@ namespace Quan_ao.View.User
                 lbl_giasp.Text = sanpham.Gia.ToString();
             }
         }
-
+        private CartItem add_sp()
+        {
+            CartItem gio1 = new CartItem();
+            gio1.Ma_SP = id;
+            gio1.So_Luong = int.Parse(DDL_Soluong.SelectedValue);
+            gio1.MaMau = int.Parse(DDL_mau_sac.SelectedValue);
+            gio1.Makichthuoc = int.Parse(DDL_Size.SelectedValue);
+            gio1.Gia_Tong_SP = 0;
+            return gio1;
+        }
         protected void btn_them_gio_Click(object sender, EventArgs e)
         {
             // kiểm tra xem có giỏ hay chưa
             List<CartItem> cartItems = (List<CartItem>)Session["Cart"];
             if (cartItems != null)
             {
-                //List<CartItem> cart = (List<CartItem>)HttpContext.Current.Session["Cart"];
-                //if (cart == null)
-                //{
-                //    cart = new List<CartItem>();
-                //}
-                // kiểm tra xem có trong giỏ hàng chưa
-                CartItem sanPham = cartItems.Find(sp => sp.Ma_SP == id);
+                CartItem sanPham = cartItems.Find(sp => sp.Ma_SP == id && sp.Makichthuoc == int.Parse(DDL_Size.SelectedValue) && sp.MaMau == int.Parse(DDL_mau_sac.SelectedValue));
+                // tìm trong giỏ có sản phẩm không
                 if (sanPham == null)
                 {
-                    CartItem gio1 = new CartItem();
-                    gio1.Ma_SP = id;
-                    gio1.So_Luong = int.Parse(DDL_Soluong.SelectedValue);
-                    gio1.MaMau = int.Parse(DDL_mau_sac.SelectedValue);
-                    gio1.Makichthuoc = int.Parse(DDL_Size.SelectedValue);
-                    gio1.Gia_Tong_SP = 0;
-                    //cart.Add(gio1);
-                    cartItems.Add(gio1);
+                    cartItems.Add(add_sp());
                     HttpContext.Current.Session["Cart"] = cartItems;
                     Response.Write("<script> alert('da them thanh cong') </script>");
-
+                }
+                // nếu có sản phẩm rồi kiểm tra có khác màu sắc với size không
+                else if (sanPham.MaMau != int.Parse(DDL_mau_sac.SelectedValue) || sanPham.Makichthuoc != int.Parse(DDL_Size.SelectedValue))
+                {
+                    cartItems.Add(add_sp());
+                    HttpContext.Current.Session["Cart"] = cartItems;
+                    Response.Write("<script> alert('da them thanh cong') </script>");
                 }
                 else
-                    sanPham.So_Luong += int.Parse(DDL_Soluong.SelectedValue); ;
-
+                    sanPham.So_Luong += int.Parse(DDL_Soluong.SelectedValue);
                 // Lưu giỏ hàng vào session
 
             }// có giỏ thì thêm dữ liệu vào
@@ -90,6 +92,7 @@ namespace Quan_ao.View.User
                 Response.Write("<script> alert('da them thanh cong') </script>");
 
             }
+
         }
     }
 }

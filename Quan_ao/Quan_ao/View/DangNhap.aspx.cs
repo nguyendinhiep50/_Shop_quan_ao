@@ -11,10 +11,19 @@ namespace Quan_ao.View
     public partial class DangNhap : System.Web.UI.Page
     {
         private Shop_quan_ao db = new Shop_quan_ao();
+        int id = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             // kiểm tra Session có hay chưa
+            {
+                if (Request.QueryString["ID"] != null)
+                {
+                    id = Convert.ToInt32(Request.QueryString["ID"]);
+                    if (id == 10)
+                        Session.Remove("ADMIN");
+                }
 
+            }
             // Phân cấp Session
         }
 
@@ -47,11 +56,6 @@ namespace Quan_ao.View
                     Response.Redirect("User/Home.aspx");
                 }
             }
-        }
-        protected void btn_dangxuat(object sender, EventArgs e)
-        {
-            Session.Remove("ADMIN");
-            Response.Redirect("../DangNhap.aspx");
         }
     }
 }

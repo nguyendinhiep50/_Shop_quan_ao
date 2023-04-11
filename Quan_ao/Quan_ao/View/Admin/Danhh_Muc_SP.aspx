@@ -2,9 +2,39 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-      .form-group label{
+        .bg-dark{
+            margin-bottom:10px;
+        }
+        .form-group label{
             font-weight:bold;
             color:#A55129;
+        }
+
+        div table tbody tr td  input  {
+          background:#FFA500;
+          border: 2px solid #FFA500;
+          color:white;
+          text-align:center;
+          margin: 0 auto;
+          
+        }
+        div table tbody tr td  input:hover {
+             background-color:#A52A2A;
+             transition:0.5s;
+        }
+        .form-group{
+             display:flex;
+        }
+        div #ContentPlaceHolder1_btn_them_sp{
+            background: #FFA500;
+            border: 2px solid #FFA500;
+            color: white;
+            text-align: center;
+            font-weight:bold;
+        }
+        div #ContentPlaceHolder1_btn_them_sp:hover{
+            background-color:#A52A2A;
+            transition:0.5s;
         }
     </style>
 </asp:Content>

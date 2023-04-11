@@ -18,5 +18,14 @@ namespace Quan_ao.View.Admin
             }
           
         }
+
+        protected void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            if (Session["ADMIN"] != null)
+            {
+                Session.Remove("ADMIN");
+                Response.Redirect("../DangNhap.aspx");
+            }
+        }
     }
 }

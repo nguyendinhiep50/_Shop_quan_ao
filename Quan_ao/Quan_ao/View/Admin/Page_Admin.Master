@@ -37,7 +37,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nhà cung cấp</a>
+                    <a class="nav-link" href="NhaCC.aspx">Nhà cung cấp</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cài đặt
@@ -58,7 +58,7 @@
                     </a>
                 </div>
                 <div>
-                    <a href="DangXuat.aspx">Đăng xuất</a>
+                    <a href="../DangNhap.aspx?ID=10"/>Đăng xuất</a>
                 </div>
             </div>
     </nav>

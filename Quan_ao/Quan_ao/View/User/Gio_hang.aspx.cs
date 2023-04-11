@@ -137,6 +137,8 @@ namespace Quan_ao.View.User
                 updateHD.TongTien = gia_hoadon;
                 db.SaveChanges();
             }
+            else
+                Response.Write("<script> alert('bạn cần đăng nhập') </script>");
         }
         protected void btn_xoa_Click(object sender, EventArgs e)
         {

@@ -28,6 +28,7 @@ namespace Quan_ao.View.Admin
                                  sp.URL_Hinh_Anh,
                                  sp.LuotMua,
                              };
+                result = result.OrderByDescending(x => x.MaSP_ID);
                 GV_SanPham.DataSource = result.ToList();
                 GV_SanPham.DataBind();
 
@@ -41,9 +42,13 @@ namespace Quan_ao.View.Admin
 
         protected void GV_SanPham_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            var sp = db.SANPHAMs.Find(int.Parse(e.Values["MaSP_ID"].ToString()));
-            db.SANPHAMs.Remove(sp);
-            db.SaveChanges();
+            int maSP_ID = Convert.ToInt32(GV_SanPham.DataKeys[e.RowIndex].Values["MaSP_ID"]);
+            if (maSP_ID != null)
+            {
+                var sp = db.SANPHAMs.Find(maSP_ID);
+                db.SANPHAMs.Remove(sp);
+                db.SaveChanges();
+            }
             //
             Response.Redirect("SanPham.aspx");
         }
@@ -80,6 +85,7 @@ namespace Quan_ao.View.Admin
 
         protected void GV_SanPham_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            int pageCount = GV_SanPham.PageCount;
             GV_SanPham.PageIndex = e.NewPageIndex;
             var result = from sp in db.SANPHAMs
                          join dm in db.DanhMuc_SP on sp.MaDMSP equals dm.MaDMSP
@@ -93,8 +99,9 @@ namespace Quan_ao.View.Admin
                              sp.URL_Hinh_Anh,
                              sp.LuotMua,
                          };
-            var row = GV_SanPham.Rows[e.NewPageIndex];
-            var data = (DropDownList)row.FindControl("TenMuc");
+            result = result.OrderByDescending(x => x.MaSP_ID);
+            // var row = GV_SanPham.Rows[e.NewPageIndex];
+            // var data = (DropDownList)row.FindControl("TenMuc");
             GV_SanPham.DataSource = result.ToList();
             GV_SanPham.DataBind();
         }

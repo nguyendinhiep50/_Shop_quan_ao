@@ -1,45 +1,37 @@
 
-
- 
-.thongtin {
-    flex-basis: 43%;
-    height: 100%;
-}
-.gioithieu  {
-    flex-basis: 15%;
-    height: 100%;
-}
-.dichvu  {
-    flex-basis: 25%;
-    height: 100%;
-}
-.lienhe  {
-    flex-basis: 18%;
-    height: 100%;
-}
-/*.footer_container {
-        width: 100%;
-        clear: both;
-        position: absolute;
-        top: 1700px;
-        z-index: -1;
+.footer_nav_container ul,
+.footer_social ul {
+    padding: 0px 50px;
 }
 
-/* style thongtin */
-/* style footer  */
-.footer {
-    border-top: 1px solid rgb(157, 155, 155);
-}
-.footer p {
-    padding: 10px 0;
-    text-align: center;
-    color: #666;
-    width: 100%;
-    
-}
-
-/* style cartegory */
-
-
-
+@media (max-width: 576px) {
+    .cart_content {
+        display: grid !important;
+        width: 100%;   
+        margin: auto !important;
+        grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    }
+        .cart_content .cart_content_left {
+            width: 100%;
+            margin: auto;
+        }
+        .cart_content .cart_content_left table tr th {
+            font-size: 10px;
+        }
+            .cart_content .cart_content_left .thongtinsp{
+                font-size: 10px !important;
+            }
+            .cart_content .cart_content_left .txtsoluong {
+                width: 20px !important;
+            }
+            .cart_content_right {
+                width: 100% !important;
+                margin-top: 40px !important;
+            }
+    .cart_content_right table tr td {
+        width: 100% !important;
+    }
+    cart_content_right_button {
+        
+    }
 }
