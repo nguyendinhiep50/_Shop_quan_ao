@@ -21,6 +21,8 @@
     <asp:PlaceHolder runat="server"></asp:PlaceHolder>
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="~/Content/CSS/stye.css">
+
 
 </head>
 <body>

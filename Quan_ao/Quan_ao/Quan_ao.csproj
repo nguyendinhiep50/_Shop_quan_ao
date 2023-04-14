@@ -95,6 +95,7 @@
     <Content Include="Content\CSS\lightbox.css" />
     <Content Include="Content\CSS\Sales.css" />
     <Content Include="Content\CSS\single_styles.css" />
+    <Content Include="Content\CSS\stye.css" />
     <Content Include="Content\CSS\Web.css" />
     <Content Include="Content\IMG\1.jpg" />
     <Content Include="Content\IMG\1.small.jpg" />
