@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -46,10 +47,17 @@ namespace Quan_ao.View.Admin
             if (maSP_ID != null)
             {
                 var sp = db.SANPHAMs.Find(maSP_ID);
-                db.SANPHAMs.Remove(sp);
-                db.SaveChanges();
+                try
+                {
+                    db.SANPHAMs.Remove(sp);
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    lbl_canh_bao.Text = "không thể xoá được do có dữ liệu liên quan";
+                    return;
+                }
             }
-            //
             Response.Redirect("SanPham.aspx");
         }
         protected void GV_SanPham_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -73,7 +81,11 @@ namespace Quan_ao.View.Admin
             db_add.MaDMSP = int.Parse(ddl_danhmuc.SelectedValue.ToString());
             db_add.TenSP = txtTensp.Text;
             db_add.Gia = int.Parse(txtgia.Text);
+
             db_add.URL_Hinh_Anh = FU_IMG.FileName.ToString();
+            string filePath = Path.Combine(Server.MapPath("~/Content/IMG/hinh_san_pham/"), FU_IMG.FileName);
+            FU_IMG.SaveAs(filePath);
+
             db_add.NhanXet = txtnhanxet.Text;
             db_add.DanhGia = int.Parse(txtdanhgia.Text);
             db_add.TinhTrang = true;

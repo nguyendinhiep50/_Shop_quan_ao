@@ -95,50 +95,57 @@ namespace Quan_ao.View.User
 
         protected void btn_thanhToan_Click(object sender, EventArgs e)
         {
-            var ktraTK = Session["USER"];
-            int gia_hoadon = 0;
-            if (ktraTK != null)
+            // kiểm tra nhập địa chỉ chưa 
+            if(txt_diachi.Text=="")
+                Response.Write("<script> alert('bạn cần nhập địa chỉ') </script>");
+            else
             {
-                Quan_ao.Models.TaiKhoan tk = (Quan_ao.Models.TaiKhoan)ktraTK;
-                //xử lý hoá đơn
-                db.HoaDons.Add(new Models.HoaDon
+                var ktraTK = Session["USER"];
+                int gia_hoadon = 0;
+                if (ktraTK != null)
                 {
-
-                    TongTien = 0,
-                    MaTK = tk.MaTK,
-                    DiaChi = "khong thay",
-                    NgayDat = DateTime.Today,
-                    XacNhan = false
-                });
-                db.SaveChanges();
-
-                // Lấy ra mã hóa đơn vừa tạo
-                var hoadon_lay_ma = db.HoaDons.OrderByDescending(x => x.MaHoaDon).FirstOrDefault();
-
-                // xử lý sản phẩm mua
-                List<CartItem> cartItems = (List<CartItem>)Session["Cart"];
-                foreach (CartItem item in cartItems)
-                {
-                    db.SanPham_Mua.Add(new SanPham_Mua
+                    Quan_ao.Models.TaiKhoan tk = (Quan_ao.Models.TaiKhoan)ktraTK;
+                    //xử lý hoá đơn
+                    db.HoaDons.Add(new Models.HoaDon
                     {
-                        MaSP_ID = item.Ma_SP,
-                        MaHoaDon = hoadon_lay_ma.MaHoaDon,
-                        SoLuong = item.So_Luong,
-                        mamau = item.MaMau,
-                        masize = item.Makichthuoc
+
+                        TongTien = 0,
+                        MaTK = tk.MaTK,
+                        DiaChi = "khong thay",
+                        NgayDat = DateTime.Today,
+                        XacNhan = false
                     });
                     db.SaveChanges();
-                    // tính giá tiền
-                    var data = db.SANPHAMs.Find(item.Ma_SP);
-                    gia_hoadon += int.Parse(data.Gia.ToString()) * item.So_Luong;
+
+                    // Lấy ra mã hóa đơn vừa tạo
+                    var hoadon_lay_ma = db.HoaDons.OrderByDescending(x => x.MaHoaDon).FirstOrDefault();
+
+                    // xử lý sản phẩm mua
+                    List<CartItem> cartItems = (List<CartItem>)Session["Cart"];
+                    foreach (CartItem item in cartItems)
+                    {
+                        db.SanPham_Mua.Add(new SanPham_Mua
+                        {
+                            MaSP_ID = item.Ma_SP,
+                            MaHoaDon = hoadon_lay_ma.MaHoaDon,
+                            SoLuong = item.So_Luong,
+                            mamau = item.MaMau,
+                            masize = item.Makichthuoc
+                        });
+                        db.SaveChanges();
+                        // tính giá tiền
+                        var data = db.SANPHAMs.Find(item.Ma_SP);
+                        gia_hoadon += int.Parse(data.Gia.ToString()) * item.So_Luong;
+                    }
+                    // xử lý để cập nhật lại Hoá đơn
+                    var updateHD = db.HoaDons.Find(hoadon_lay_ma.MaHoaDon);
+                    updateHD.TongTien = gia_hoadon;
+                    db.SaveChanges();
                 }
-                // xử lý để cập nhật lại Hoá đơn
-                var updateHD = db.HoaDons.Find(hoadon_lay_ma.MaHoaDon);
-                updateHD.TongTien = gia_hoadon;
-                db.SaveChanges();
+                else
+                    Response.Write("<script> alert('bạn cần đăng nhập') </script>");
             }
-            else
-                Response.Write("<script> alert('bạn cần đăng nhập') </script>");
+      
         }
         protected void btn_xoa_Click(object sender, EventArgs e)
         {
@@ -160,10 +167,7 @@ namespace Quan_ao.View.User
             HttpContext.Current.Session["Cart"] = cartItems;
             Response.Redirect(Request.RawUrl);// đường dẫn hiện tại
         }
-        protected void input_SL_change(object sender, EventArgs e)
-        {
-            int so = 0;
-        }
+
         protected void btn_capnhat_Click(object sender, EventArgs e)
         {
             // lấy ra số lượng trên web

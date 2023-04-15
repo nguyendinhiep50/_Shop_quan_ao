@@ -39,19 +39,56 @@
             transition:0.5s;
         }
     </style>
-        <asp:GridView ID="GV_CTHoaDon" runat="server" OnRowCancelingEdit="GV_CTHoaDon_RowCancelingEdit" OnRowDeleting="GV_CTHoaDon_RowDeleting" OnRowEditing="GV_CTHoaDon_RowEditing">
+        <asp:Label ID="LBL_thongtin_khach" runat="server" Text="Đây là thông tin khách hàng"></asp:Label>
+        <br />
+            <div class="form-group">
+                <asp:Label ID="lbl_tenkhach" runat="server" Text="Tên khách"></asp:Label>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lbl_SDT" runat="server" Text="Số điện thoại"></asp:Label>
+            </div>
+            <asp:Label ID="lbl_ghichu" runat="server" Text="Chỉ có thể sửa số lượng,Chọn loại màu và size khác "></asp:Label>
+    <br />
+    <br />
+            <asp:Label ID="lbl_canh_bao" runat="server" Text=""></asp:Label>
+
+        <asp:GridView ID="GV_CTHoaDon" runat="server" OnRowCancelingEdit="GV_CTHoaDon_RowCancelingEdit" OnRowDeleting="GV_CTHoaDon_RowDeleting" OnRowEditing="GV_CTHoaDon_RowEditing" OnRowUpdating="GV_CTHoaDon_RowUpdating" AutoGenerateColumns="False">
         <Columns>
-            <asp:CommandField ShowEditButton="true"  ButtonType="button" EditText="Sửa" UpdateText="Cập nhật" />
+             <asp:CommandField ShowEditButton="true"  ButtonType="button" EditText="Sửa" UpdateText="Cập nhật" />
+                <asp:BoundField DataField="MaSP_Mua" HeaderText="Mã HoaDon" />
+                <asp:BoundField DataField="TenSP" HeaderText="Tên sản phẩm" />
+                <asp:BoundField DataField="SoLuong" HeaderText="Số lượng" />
+                
+                <asp:TemplateField HeaderText="Tên màu">
+                    <ItemTemplate>
+                        <asp:Label ID="lblTenMau" runat="server" Text='<%# Bind("TenMau") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="ddlTenMau" runat="server"></asp:DropDownList>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Tên size">
+                    <ItemTemplate>
+                        <asp:Label ID="lblTensize" runat="server" Text='<%# Bind("Size1") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="ddlsize" runat="server"></asp:DropDownList>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
                 <asp:TemplateField HeaderText="Tác vụ">
                     <ItemTemplate>
                         <asp:Button ID="btXoas" runat="server" Text="xoá" 
-                            OnClientClick="return confirm('Bạn có đồng ý xoá nhà cung cấp này không')" 
+                            OnClientClick="return confirm('Bạn có đồng ý xoá sản phẩm này không')" 
                             CommandName="Delete" />
                     </ItemTemplate>
-                    <EditItemTemplate></EditItemTemplate>
+                    <EditItemTemplate>
+
+                    </EditItemTemplate>
                 </asp:TemplateField>
+             
         </Columns>
-                    <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
         <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
         <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />

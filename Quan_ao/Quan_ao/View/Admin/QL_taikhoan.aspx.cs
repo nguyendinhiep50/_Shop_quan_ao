@@ -38,7 +38,7 @@ namespace Quan_ao.View.Admin
         protected void GV_Tai_Khoan_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             var sp = db.TaiKhoans.Find(int.Parse(e.NewValues["MaTK"].ToString()));
-            sp.TenTK = e.NewValues["TenDanhMuc"].ToString();
+            sp.TenTK = e.NewValues["TenTK"].ToString();
             sp.MatKhauTk = e.NewValues["MatKhauTk"].ToString();
             sp.PhanCap = bool.Parse(e.NewValues["PhanCap"].ToString());
             sp.SDT = int.Parse(e.NewValues["SDT"].ToString());

@@ -19,11 +19,44 @@ namespace Quan_ao.View.User
                 {
                     id = Convert.ToInt32(Request.QueryString["ID"]);
                 }
-                DDL_mau_sac.DataSource = db.MAUSACs.ToList();
+                // thiết lập dữ liệu từng loại cho sản phẩm lấy ra từ kho hàng
+                var Data_mausac = (from SP in db.SANPHAMs
+                                    join CT in db.Chi_tiet_SP on SP.MaSP_ID equals CT.MaSP_ID
+                                    join SZ in db.SIZEs on CT.MaSize equals SZ.MaSize
+                                    join CL in db.MAUSACs on CT.MaMau equals CL.MaMau
+                                    where SP.MaSP_ID == id
+                                    select new
+                                    {
+                                        SP.TenSP,
+                                        SZ.Size1,
+                                        SZ.MaSize,
+                                        CL.TenMau,
+                                        CL.MaMau,
+                                        CT.SoLuong
+                                    })
+                                   .GroupBy(x => new { x.TenMau, x.MaMau })  // group by để nó không lấy ra dữ liệu bị trùng
+                                   .Select(g => g.FirstOrDefault());  // lấy ra giá trị đầu tiên
+                DDL_mau_sac.DataSource = Data_mausac.ToList();
                 DDL_mau_sac.DataTextField = "TenMau"; // Thiết lập để hiển thị tên màu
                 DDL_mau_sac.DataValueField = "MaMau"; // Thiết lập để lưu trữ mã màu
                 DDL_mau_sac.DataBind();
-                DDL_Size.DataSource = db.SIZEs.ToList();
+                var Data_size = (from SP in db.SANPHAMs
+                                   join CT in db.Chi_tiet_SP on SP.MaSP_ID equals CT.MaSP_ID
+                                   join SZ in db.SIZEs on CT.MaSize equals SZ.MaSize
+                                   join CL in db.MAUSACs on CT.MaMau equals CL.MaMau
+                                   where SP.MaSP_ID == id
+                                   select new
+                                   {
+                                       SP.TenSP,
+                                       SZ.Size1,
+                                       SZ.MaSize,
+                                       CL.TenMau,
+                                       CL.MaMau,
+                                       CT.SoLuong
+                                   })
+                   .GroupBy(x => new { x.TenMau, x.MaMau })
+                   .Select(g => g.FirstOrDefault());
+                DDL_Size.DataSource = Data_size.ToList();
                 DDL_Size.DataTextField = "Size1";
                 DDL_Size.DataValueField = "MaSize";
 

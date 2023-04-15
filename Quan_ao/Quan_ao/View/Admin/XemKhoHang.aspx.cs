@@ -110,7 +110,6 @@ namespace Quan_ao.View.Admin
                              SC.SoLuong,
                              SC.NhaCC.TenNhaCC,
                          };
-            //var row = GV_ChiTiet.Rows[e.NewEditIndex];
             GV_ChiTiet.DataSource = result.ToList();
             GV_ChiTiet.DataBind();
 

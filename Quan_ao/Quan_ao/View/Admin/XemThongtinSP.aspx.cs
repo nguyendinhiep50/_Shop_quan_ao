@@ -22,13 +22,12 @@ namespace Quan_ao.View.Admin
                     var result = db.SANPHAMs.Where(x => x.MaSP_ID == id).ToList();
                     LV_thongtin_sp.DataSource = result;
                     LV_thongtin_sp.DataBind();
-
                     DDL_tenmuc.DataSource = db.DanhMuc_SP.ToList();
                     DDL_tenmuc.DataTextField = "TenMuc";
                     DDL_tenmuc.DataValueField = "MaDMSP";
                     DDL_tenmuc.DataBind();
+                    DDL_tenmuc.SelectedValue = (result.FirstOrDefault()?.MaDMSP).ToString();
                 }
-
             }
         }
 

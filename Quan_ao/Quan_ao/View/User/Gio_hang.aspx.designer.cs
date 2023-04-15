@@ -42,6 +42,15 @@ namespace Quan_ao.View.User
         protected global::System.Web.UI.WebControls.Label lbl_thanhtien;
 
         /// <summary>
+        /// txt_diachi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_diachi;
+
+        /// <summary>
         /// btn_thanhToan control.
         /// </summary>
         /// <remarks>
@@ -51,12 +60,12 @@ namespace Quan_ao.View.User
         protected global::System.Web.UI.WebControls.Button btn_thanhToan;
 
         /// <summary>
-        /// GV_gio_hang control.
+        /// btndathang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GV_gio_hang;
+        protected global::System.Web.UI.WebControls.Button btndathang;
     }
 }

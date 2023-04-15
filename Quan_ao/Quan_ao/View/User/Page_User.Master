@@ -99,21 +99,18 @@
 							<a href="#">colo<span>shop</span></a>
 						</div>
 						<nav class="navbar">
-							<ul class="navbar_menu">
-								<li><a href="#">home</a></li>
-								<li><a href="#">shop</a></li>
-								<li><a href="#">promotion</a></li>
-								<li><a href="#">pages</a></li>
-								<li><a href="#">blog</a></li>
-								<li><a href="contact.html">contact</a></li>
+							<ul class="navbar_menu mb-0">
+								<li><a style="font-size:24px" href="/View/User/home.aspx">Home</a></li>
+								<li><a style="font-size:24px" href="/View/User/home.aspx?ID=2">Quần</a></li>
+								<li><a style="font-size:24px" href="/View/User/home.aspx?ID=1">Áo</a></li>
+								<li><a style="font-size:24px" href="/View/User/home.aspx?ID=3">Phụ kiện</a></li>
+								<li><a style="font-size:24px" href="/View/User/home.aspx?ID=4">Giày dép</a></li>
 							</ul>
 							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-								<li><a href="../DangNhap.aspx"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+								<li><a href="../DangNhap.aspx" style="display:inline">Đăng nhập<i class="fa fa-user" aria-hidden="true"></i></a></li>
 								<li class="checkout">
-									<a href="Gio_hang.aspx">
+									<a href="Gio_hang.aspx" style="display:inline"> Giỏ hàng
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<span id="checkout_items" class="checkout_items">2</span>
 									</a>
 								</li>
 							</ul>
@@ -245,4 +242,13 @@
 //  
 <script src="../../Content/JS/Gio_Hang.js"></script>
 <script src="../../Content/jsBTrap/bootstrap.min.js"></script>
+<script>
+    document.getElementById("btn_thanhToan").addEventListener("click", function(event) {
+	  var address = document.getElementById("newsletter_address").value;
+		  if (address.trim() === '') {
+			event.preventDefault(); // Ngăn chặn gửi form nếu địa chỉ chưa được nhập
+			alert("Vui lòng nhập địa chỉ!");
+		  }
+	});
+</script>
 </html>

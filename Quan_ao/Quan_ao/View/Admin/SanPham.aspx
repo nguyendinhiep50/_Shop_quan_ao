@@ -84,6 +84,7 @@
         </div>
     </div>
     <div>
+        <asp:Label ID="lbl_canh_bao" runat="server" Text=""></asp:Label>
         <asp:GridView ID="GV_SanPham" DataKeyNames="MaSP_ID" runat="server" OnRowDeleting="GV_SanPham_RowDeleting"  OnRowCommand="GV_SanPham_RowCommand" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GV_SanPham_PageIndexChanging" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
             <Columns>
                  <asp:BoundField DataField="MaSP_ID" HeaderText="Mã Sản phẩm" />

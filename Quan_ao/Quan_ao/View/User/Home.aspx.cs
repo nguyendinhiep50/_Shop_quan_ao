@@ -11,18 +11,48 @@ namespace Quan_ao.View.User
     public partial class Home : System.Web.UI.Page
     {
         private Shop_quan_ao db = new Shop_quan_ao();
+        int id;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                DDL_danhmuc.DataSource = db.DanhMuc_SP.ToList();
-                DDL_danhmuc.DataTextField = "TenMuc";
-                DDL_danhmuc.DataValueField = "MaDMSP"; 
-                DDL_danhmuc.DataBind();
-                var result = db.SANPHAMs.ToList();
-                rptProducts.DataSource = result.ToList();
-                rptProducts.DataBind();
+                if (Request.QueryString["ID"] != null)
+                {
+                    id = Convert.ToInt32(Request.QueryString["ID"]);
+                    var result = from DM in db.DanhMucs
+                                 join DMSP in db.DanhMuc_SP on DM.MaDanhMuc equals DMSP.MaDanhMuc
+                                 join SP in db.SANPHAMs on DMSP.MaDMSP equals SP.MaDMSP
+                                 where DM.MaDanhMuc == id
+                                 select new
+                                 {
+                                     SP.MaSP_ID,
+                                     SP.TenSP,
+                                     SP.Gia,
+                                     SP.LuotMua,
+                                     SP.URL_Hinh_Anh
+                                 };
+                    DDL_danhmuc.DataSource = db.DanhMuc_SP.ToList();
+                    DDL_danhmuc.DataTextField = "TenMuc";
+                    DDL_danhmuc.DataValueField = "MaDMSP";
+                    DDL_danhmuc.DataBind();
+
+                    rptProducts.DataSource = result.ToList();
+                    rptProducts.DataBind();
+                }
+                else
+                {
+                    DDL_danhmuc.DataSource = db.DanhMuc_SP.ToList();
+                    DDL_danhmuc.DataTextField = "TenMuc";
+                    DDL_danhmuc.DataValueField = "MaDMSP";
+                    DDL_danhmuc.DataBind();
+                    var result = db.SANPHAMs.ToList();
+
+                    rptProducts.DataSource = result.ToList();
+                    rptProducts.DataBind();
+                }    
+
             }
+            
         }
 
         protected void btn_tangdan_Click(object sender, EventArgs e)

@@ -4,21 +4,7 @@
 
     <section class="cart">
         <div class="container">
-            <%--<div class="cart_top_center">
-                <div class="cart_top">
-                    <div class="cart_top_cart cart_top_item">
-                        <i class="fa fa-cart-arrow-down cart_top_item " aria-hidden="true"></i>
-                    </div>
-                    <div class="cart_top_cart ">
-                        <i class="fa fa-map-marker cart_top_item " aria-hidden="true"></i>
-                    </div>
-                    <div class="cart_top_cart">
-                        <i class="fa fa-credit-card cart_top_item" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>--%>
         </div>
-        <br>
         <br>
         <br>
         <div class="container">
@@ -90,9 +76,12 @@
                         <p style="color: red;"><i class="fa fa-exclamation me-3" aria-hidden="true"></i>Miễn phí ship đơn hàng có tổng gía trị trên 2.000.000đ</p>
                         <p style="color: red;"><i class="fa fa-exclamation me-3" aria-hidden="true"></i>Mua thêm 1.301.000đ để được miễn phí SHIP</p>
                     </div>
+                    <asp:TextBox ID="txt_diachi" runat="server"></asp:TextBox>
+                      <asp:Button ID="btn_thanhToan"  runat="server" Text="Thanh Toán" CssClass="newsletter_submit_btn trans_300" OnClick="btn_thanhToan_Click" />
+	                </div>
+
                     <div class="cart_content_right_button text-center mb-3">
-                      <asp:Button runat="server" ID="btndathang" Text="Đặt hàng" CssClass="btn btn-success" />
-                       <asp:Button ID="btn_thanhToan" runat="server" Text="Thanh Toán" CssClass="btn btn-success" OnClick="btn_thanhToan_Click" />
+                      <asp:Button runat="server" ID="btndathang" Text="Xem các đơn đặt hàng trước" CssClass="btn btn-success" />
 
                     </div>
                     <div class="cart_content_right_login">
@@ -103,9 +92,6 @@
             </div>
         </div>
     </section>
-    <asp:GridView ID="GV_gio_hang" runat="server">
-        <Columns>
-        </Columns>
-    </asp:GridView>
+
 
 </asp:Content>

@@ -15,6 +15,51 @@ namespace Quan_ao.View.Admin
     {
 
         /// <summary>
+        /// LBL_thongtin_khach control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_thongtin_khach;
+
+        /// <summary>
+        /// lbl_tenkhach control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_tenkhach;
+
+        /// <summary>
+        /// lbl_SDT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_SDT;
+
+        /// <summary>
+        /// lbl_ghichu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ghichu;
+
+        /// <summary>
+        /// lbl_canh_bao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_canh_bao;
+
+        /// <summary>
         /// GV_CTHoaDon control.
         /// </summary>
         /// <remarks>

@@ -23,10 +23,22 @@ namespace Quan_ao.View.Admin
 
         protected void GV_HoaDon_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            bool ktra_dulieu = false;
             var sp = db.HoaDons.Find(int.Parse(e.NewValues["MaHoaDon"].ToString()));
             sp.XacNhan = Boolean.Parse(e.NewValues["XacNhan"].ToString());
-            db.SaveChanges();
-            Response.Redirect("HoaDon_admin.aspx");
+            sp.DiaChi = e.NewValues["DiaChi"].ToString();
+            int MaTK = -1;
+            ktra_dulieu = int.TryParse(e.NewValues["MaTK"].ToString(),out MaTK);
+            if (MaTK ==-1 || ktra_dulieu == false)
+            {
+
+            }
+            else
+            {
+                db.SaveChanges();
+                Response.Redirect("HoaDon_admin.aspx");
+            }
+          
         }
 
         protected void GV_HoaDon_RowDeleting(object sender, GridViewDeleteEventArgs e)
