@@ -76,12 +76,12 @@
                         <p style="color: red;"><i class="fa fa-exclamation me-3" aria-hidden="true"></i>Miễn phí ship đơn hàng có tổng gía trị trên 2.000.000đ</p>
                         <p style="color: red;"><i class="fa fa-exclamation me-3" aria-hidden="true"></i>Mua thêm 1.301.000đ để được miễn phí SHIP</p>
                     </div>
-                    <asp:TextBox ID="txt_diachi" runat="server"></asp:TextBox>
+                    Địa chỉ <asp:TextBox ID="txt_diachi" runat="server"></asp:TextBox>
                       <asp:Button ID="btn_thanhToan"  runat="server" Text="Thanh Toán" CssClass="newsletter_submit_btn trans_300" OnClick="btn_thanhToan_Click" />
 	                </div>
 
                     <div class="cart_content_right_button text-center mb-3">
-                      <asp:Button runat="server" ID="btndathang" Text="Xem các đơn đặt hàng trước" CssClass="btn btn-success" />
+                      <asp:Button runat="server" ID="btndathang" Text="Xem các đơn đặt hàng trước" CssClass="btn btn-success" OnClick="btndathang_Click" />
 
                     </div>
                     <div class="cart_content_right_login">

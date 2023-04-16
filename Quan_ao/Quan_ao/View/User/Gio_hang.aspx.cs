@@ -111,7 +111,7 @@ namespace Quan_ao.View.User
 
                         TongTien = 0,
                         MaTK = tk.MaTK,
-                        DiaChi = "khong thay",
+                        DiaChi = txt_diachi.Text,
                         NgayDat = DateTime.Today,
                         XacNhan = false
                     });
@@ -189,6 +189,11 @@ namespace Quan_ao.View.User
             //lưu lại
             HttpContext.Current.Session["Cart"] = cartItems;
             Response.Redirect(Request.RawUrl);// đường dẫn hiện tại
+        }
+
+        protected void btndathang_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TK_khach_hang.aspx");
         }
     }
 }

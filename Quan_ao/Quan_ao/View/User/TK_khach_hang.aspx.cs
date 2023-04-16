@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -34,6 +35,7 @@ namespace Quan_ao.View.User
                 else
                 {
                     Response.Redirect("../DangNhap.aspx");
+
                 }
             }
         }
@@ -70,7 +72,9 @@ namespace Quan_ao.View.User
 
         protected void btn_dangxuat_Click(object sender, EventArgs e)
         {
+            Session.Remove("USER");
             Response.Redirect("../DangNhap.aspx");
+
         }
     }
 }

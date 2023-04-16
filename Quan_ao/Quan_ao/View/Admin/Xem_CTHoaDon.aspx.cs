@@ -120,13 +120,13 @@ namespace Quan_ao.View.Admin
         {
             var sp = db.Chi_tiet_SP.Find(int.Parse(e.NewValues["MaSP_Mua"].ToString()));
             GridViewRow row = GV_CTHoaDon.Rows[e.RowIndex];
-            DropDownList ddlSize1 = (DropDownList)row.FindControl("ddlSize1");
+            DropDownList ddlSize1 = (DropDownList)row.FindControl("ddlsize");
             DropDownList ddlTenMau = (DropDownList)row.FindControl("ddlTenMau");
             sp.MaSize = int.Parse(ddlSize1.SelectedValue);
             sp.MaMau = int.Parse(ddlTenMau.SelectedValue);
             sp.SoLuong = int.Parse(e.NewValues["SoLuong"].ToString());
-            //db.SaveChanges();
-            //Response.Redirect(Request.RawUrl);
+            db.SaveChanges();
+            Response.Redirect(Request.RawUrl);
         }
     }
 }
