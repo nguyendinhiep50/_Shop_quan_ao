@@ -208,9 +208,11 @@
     <Content Include="View\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="View\plugins\themify-icons\fonts\themify.svg" />
     <Content Include="View\plugins\themify-icons\themify-icons.css" />
+    <Content Include="View\User\CT_hoadon_khach.aspx" />
     <Content Include="View\User\Gio_hang.aspx" />
     <Content Include="View\User\Home.aspx" />
     <Content Include="View\User\Chi_tiet_SP.aspx" />
+    <Content Include="View\User\TK_khach_hang.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +346,13 @@
       <DependentUpon>DangNhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\User\CartItem.cs" />
+    <Compile Include="View\User\CT_hoadon_khach.aspx.cs">
+      <DependentUpon>CT_hoadon_khach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\CT_hoadon_khach.aspx.designer.cs">
+      <DependentUpon>CT_hoadon_khach.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\User\Gio_hang.aspx.cs">
       <DependentUpon>Gio_hang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -371,6 +380,13 @@
     </Compile>
     <Compile Include="View\User\Chi_tiet_SP.aspx.designer.cs">
       <DependentUpon>Chi_tiet_SP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\TK_khach_hang.aspx.cs">
+      <DependentUpon>TK_khach_hang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\TK_khach_hang.aspx.designer.cs">
+      <DependentUpon>TK_khach_hang.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

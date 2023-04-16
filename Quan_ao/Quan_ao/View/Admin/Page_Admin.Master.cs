@@ -16,6 +16,10 @@ namespace Quan_ao.View.Admin
             {
                 Response.Redirect("../DangNhap.aspx");
             }
+            else
+            {
+                lbUserName.Text ="ADMIN : "+ (Session["ADMIN"] as TaiKhoan).TenNguoiDung;
+            }
           
         }
 

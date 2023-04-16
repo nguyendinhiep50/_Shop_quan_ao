@@ -15,23 +15,14 @@
              transition:0.5s;
          }
     </style>
-    <h2 style="color:#A55129">Thêm danh mục</h2>
-    <asp:Label ID="lbl_them" runat="server" Text=""></asp:Label>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <asp:GridView ID="GV_Danh_Muc" runat="server" OnRowEditing="GV_Danh_Muc_RowEditing" OnRowUpdating="GV_Danh_Muc_RowUpdating" OnRowCancelingEdit="GV_Danh_Muc_RowCancelingEdit" OnRowDeleting="GV_Danh_Muc_RowDeleting" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+        <asp:Label ID="lbl_canhbao" runat="server" Text=""></asp:Label>
+    <asp:GridView ID="GV_Danh_Muc" runat="server" OnRowEditing="GV_Danh_Muc_RowEditing" OnRowUpdating="GV_Danh_Muc_RowUpdating" OnRowCancelingEdit="GV_Danh_Muc_RowCancelingEdit"  BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
         <Columns>
             <asp:CommandField ShowEditButton="true"  ButtonType="button" EditText="Sửa" UpdateText="Cập nhật" />
-                <asp:TemplateField HeaderText="Tác vụ">
-                    <ItemTemplate>
-                        <asp:Button ID="btXoas" runat="server" Text="xoá" 
-                            OnClientClick="return confirm('Bạn có đồng ý xoá Danh mục này không')" 
-                            CommandName="Delete" />
-                    </ItemTemplate>
-                    <EditItemTemplate></EditItemTemplate>
-                </asp:TemplateField>
+               
         </Columns>
         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />

@@ -15,6 +15,15 @@ namespace Quan_ao.View.User
     {
 
         /// <summary>
+        /// img_hinh_anh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img_hinh_anh;
+
+        /// <summary>
         /// lbl_tensp control.
         /// </summary>
         /// <remarks>

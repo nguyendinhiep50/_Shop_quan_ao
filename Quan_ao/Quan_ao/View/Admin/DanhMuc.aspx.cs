@@ -35,14 +35,7 @@ namespace Quan_ao.View.Admin
             db.SaveChanges();
             Response.Redirect("DanhMuc.aspx");
         }
-        protected void GV_Danh_Muc_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            var sp = db.DanhMucs.Find(int.Parse(e.Values["MaDanhMuc"].ToString()));
-            db.DanhMucs.Remove(sp);
-            db.SaveChanges();
-            //
-            Response.Redirect("DanhMuc.aspx");
-        }
+
         protected void GV_Danh_Muc_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             Response.Redirect("DanhMuc.aspx");

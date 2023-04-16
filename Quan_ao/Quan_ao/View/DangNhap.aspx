@@ -38,6 +38,8 @@
                             <div class="col-sm-offset-2 col-sm-10">
                                 <asp:Button ID="btDangNhap" runat="server" Text="Đăng nhập"
                                     CssClass="btn btn-success" OnClick="btDangNhap_Click" />
+                                <asp:Button ID="btn_home" runat="server" Text="Về trang chủ"
+                                    CssClass="btn btn-success" OnClick="btn_home_Click"   />
                             </div>
                         </div>
                         <div class="form-group">

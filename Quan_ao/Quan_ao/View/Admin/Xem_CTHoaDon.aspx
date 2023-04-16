@@ -52,7 +52,7 @@
     <br />
             <asp:Label ID="lbl_canh_bao" runat="server" Text=""></asp:Label>
 
-        <asp:GridView ID="GV_CTHoaDon" runat="server" OnRowCancelingEdit="GV_CTHoaDon_RowCancelingEdit" OnRowDeleting="GV_CTHoaDon_RowDeleting" OnRowEditing="GV_CTHoaDon_RowEditing" OnRowUpdating="GV_CTHoaDon_RowUpdating" AutoGenerateColumns="False">
+        <asp:GridView ID="GV_CTHoaDon" DataKeyNames="MaSP_Mua" runat="server" OnRowCancelingEdit="GV_CTHoaDon_RowCancelingEdit" OnRowDeleting="GV_CTHoaDon_RowDeleting" OnRowEditing="GV_CTHoaDon_RowEditing" OnRowUpdating="GV_CTHoaDon_RowUpdating" AutoGenerateColumns="False">
         <Columns>
              <asp:CommandField ShowEditButton="true"  ButtonType="button" EditText="Sửa" UpdateText="Cập nhật" />
                 <asp:BoundField DataField="MaSP_Mua" HeaderText="Mã HoaDon" />

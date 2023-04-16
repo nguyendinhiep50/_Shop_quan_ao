@@ -43,7 +43,6 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cài đặt
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Profile</a>
                         <a class="dropdown-item" href="QL_taikhoan.aspx">Quản Lý Tài Khoản</a>
                     </div>
                 </li>
@@ -52,13 +51,13 @@
         </div>
          <div class="nav navbar-nav navbar-right">
                 <div>
-                    <a href="DoiMatKhau.aspx" title="Thay đổi mật khẩu">
+                    <a href="QL_taikhoan.aspx" title="Thay đổi mật khẩu">
                         <asp:Label ID="lbUserName" runat="server" Text="">
                         </asp:Label>
                     </a>
                 </div>
                 <div>
-                    <a href="../DangNhap.aspx?ID=10"/>Đăng xuất</a>
+                    <a href="../DangNhap.aspx"/>Đăng xuất</a>
                 </div>
             </div>
     </nav>

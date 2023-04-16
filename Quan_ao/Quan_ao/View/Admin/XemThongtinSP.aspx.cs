@@ -35,7 +35,8 @@ namespace Quan_ao.View.Admin
         {
             int maDM = int.Parse(DDL_tenmuc.SelectedValue);
             bool ktrloi = true;
-            string tensp = "", gia = "", tinhtrang = "", fileName = "", nhanxet = "", danhgia = "", luotmua = "";
+            int gia =0, danhgia =0,luotmua = 0 ;
+            string tensp = "",tinhtrang = "", fileName = "", nhanxet = "";
             // update ở chỗ này
             if (e.CommandName == "Update")
             {
@@ -43,7 +44,9 @@ namespace Quan_ao.View.Admin
                 {
                     ListViewDataItem item = (ListViewDataItem)e.Item;
                     tensp = ((TextBox)item.FindControl("txttensp")).Text;
-                    gia = ((TextBox)item.FindControl("txtgia")).Text;
+                    string giasp= ((TextBox)item.FindControl("txtgia")).Text;
+                    ktrloi = int.TryParse(giasp, out gia);
+
                     tinhtrang = ((TextBox)item.FindControl("txttinhtrang")).Text;
                     FileUpload FU_hinhanh = (FileUpload)e.Item.FindControl("FU_hinhanh");
                     fileName = FU_hinhanh.FileName;
@@ -60,8 +63,10 @@ namespace Quan_ao.View.Admin
                         fileName = ((Label)item.FindControl("lbl_link_sp")).Text;
                     }
                     nhanxet = ((TextBox)item.FindControl("txtnhanxet")).Text;
-                    danhgia = ((TextBox)item.FindControl("txtdanhgia")).Text;
-                    luotmua = ((TextBox)item.FindControl("txtluotmua")).Text;
+                    string txtdanhgia = ((TextBox)item.FindControl("txtdanhgia")).Text;
+                    ktrloi = int.TryParse(giasp, out danhgia);
+                    string txtluotmua = ((TextBox)item.FindControl("txtluotmua")).Text;
+                    ktrloi = int.TryParse(giasp, out luotmua);
                 }
                 catch (Exception)
                 {
@@ -73,12 +78,12 @@ namespace Quan_ao.View.Admin
                     var sp = db.SANPHAMs.Find(id);
                     sp.MaDMSP = maDM;
                     sp.TenSP = tensp.ToString();
-                    sp.Gia = int.Parse(gia);
+                    sp.Gia = gia;
                     sp.TinhTrang = bool.Parse(tinhtrang);
                     sp.URL_Hinh_Anh = fileName;
                     sp.NhanXet = nhanxet;
-                    sp.DanhGia = int.Parse(danhgia);
-                    sp.LuotMua = int.Parse(luotmua);
+                    sp.DanhGia = danhgia;
+                    sp.LuotMua = luotmua;
                     db.SaveChanges();
                     Response.Redirect(Request.RawUrl);
                 }
@@ -89,15 +94,5 @@ namespace Quan_ao.View.Admin
         {
             Response.Redirect(Request.RawUrl);
         }
-
-
-        //protected void LV_thongtin_sp_ItemEditing(object sender, ListViewEditEventArgs e)
-        //{
-        //    LV_thongtin_sp.EditIndex = e.NewEditIndex;
-        //    LV_thongtin_sp.DataBind();
-
-        //    TextBox txttensp = (TextBox)LV_thongtin_sp.EditItem.FindControl("txttensp");
-        //    string tenSP = txttensp.Text;
-        //}
     }
 }

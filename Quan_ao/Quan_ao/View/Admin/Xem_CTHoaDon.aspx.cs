@@ -59,14 +59,13 @@ namespace Quan_ao.View.Admin
 
         protected void GV_CTHoaDon_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
-            int maSP_ID = Convert.ToInt32(GV_CTHoaDon.DataKeys[e.RowIndex].Values["MaSP_ID"]);
-            if (maSP_ID != null)
+            int MaSP_Mua = Convert.ToInt32( GV_CTHoaDon.DataKeys[e.RowIndex].Values["MaSP_Mua"].ToString());
+            if (MaSP_Mua != null)
             {
-                var sp = db.SANPHAMs.Find(maSP_ID);
+                var sp = db.SanPham_Mua.Find(MaSP_Mua);
                 try
                 {
-                    db.SANPHAMs.Remove(sp);
+                    db.SanPham_Mua.Remove(sp);
                     db.SaveChanges();
                 }
                 catch (Exception)

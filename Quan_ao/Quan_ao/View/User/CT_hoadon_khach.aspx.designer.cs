@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Quan_ao.View.Admin
+namespace Quan_ao.View.User
 {
 
 
-    public partial class DanhMuc
+    public partial class CT_hoadon_khach
     {
 
         /// <summary>
-        /// lbl_canhbao control.
+        /// rptProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_canhbao;
-
-        /// <summary>
-        /// GV_Danh_Muc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GV_Danh_Muc;
+        protected global::System.Web.UI.WebControls.Repeater rptProducts;
     }
 }

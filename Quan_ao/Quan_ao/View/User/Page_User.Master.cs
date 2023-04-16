@@ -12,6 +12,23 @@ namespace Quan_ao.View.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["USER"] != null)
+            {
+                link_dangnhap_xuat.Text ="Tài Khoản : "+ (Session["USER"] as TaiKhoan).TenNguoiDung ;
+            }
+            else
+            {
+                link_dangnhap_xuat.Text = "Đăng nhập";
+            }
         }
+
+        protected void link_dangnhap_xuat_Click(object sender, EventArgs e)
+        {
+            if (Session["USER"] != null)
+                Response.Redirect("TK_khach_hang.aspx");
+            else
+                Response.Redirect("../DangNhap.aspx");
+
+         }
     }
 }

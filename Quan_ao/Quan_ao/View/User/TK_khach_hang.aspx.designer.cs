@@ -7,21 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Quan_ao.View
+namespace Quan_ao.View.User
 {
 
 
-    public partial class DangNhap
+    public partial class TK_khach_hang
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// txtTenDangNhap control.
@@ -42,30 +33,57 @@ namespace Quan_ao.View
         protected global::System.Web.UI.WebControls.TextBox txtMatKhau;
 
         /// <summary>
-        /// btDangNhap control.
+        /// txt_sdt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btDangNhap;
+        protected global::System.Web.UI.WebControls.TextBox txt_sdt;
 
         /// <summary>
-        /// btn_home control.
+        /// txtEMail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_home;
+        protected global::System.Web.UI.WebControls.TextBox txtEMail;
 
         /// <summary>
-        /// lbThongBao control.
+        /// txt_nguoidung control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbThongBao;
+        protected global::System.Web.UI.WebControls.TextBox txt_nguoidung;
+
+        /// <summary>
+        /// btn_thaydoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_thaydoi;
+
+        /// <summary>
+        /// btn_dangxuat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_dangxuat;
+
+        /// <summary>
+        /// GV_HoaDon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GV_HoaDon;
     }
 }

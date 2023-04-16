@@ -43,7 +43,13 @@ namespace Quan_ao.View.Admin
 
         protected void GV_HoaDon_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            var sp = db.HoaDons.Find(int.Parse(e.Values["MaHoaDon"].ToString()));
+            // xoá toàn bộ hàng trong giỏ hàng
+            int MaHoaDon = int.Parse(e.Values["MaHoaDon"].ToString());
+            // xoá trong gio hoá đơn trước
+            var sp_giohang = db.SanPham_Mua.Where(hd => hd.MaHoaDon == MaHoaDon);
+            db.SanPham_Mua.RemoveRange(sp_giohang);
+            db.SaveChanges();
+            var sp = db.HoaDons.Find(MaHoaDon);
             db.HoaDons.Remove(sp);
             db.SaveChanges();
             //

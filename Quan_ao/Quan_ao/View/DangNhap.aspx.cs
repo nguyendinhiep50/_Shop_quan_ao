@@ -46,16 +46,21 @@ namespace Quan_ao.View
                 if (tk.PhanCap == true) //neu nguoi dung co vai tro la Admin
                 {
                     //điều hướng người dùng đến trang dành cho đối tượng là ADMIN
-                    Session["ADMIN"] = ktraTK;
+                    Session["ADMIN"] = tk;
                     Response.Redirect("Admin/DanhMuc.aspx");
                 }
                 else if (tk.PhanCap == false)
                 {
                     //điều hướng người dùng đến trang dành cho User
-                    Session["USER"] = ktraTK;
+                    Session["USER"] = tk;
                     Response.Redirect("User/Home.aspx");
                 }
             }
+        }
+
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("User/Home.aspx");
         }
     }
 }
